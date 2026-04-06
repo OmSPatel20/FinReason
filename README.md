@@ -101,5 +101,5 @@ FinReason/
 
 **Om Sanjaykumar Patel**  
 MS in AI Systems, University of Florida  
-Email: <your-email>  
-GitHub: <your-github>
+Email: omspatel20@gmail.com  
+GitHub: OmSPatel20
