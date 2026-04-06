@@ -14,7 +14,7 @@ FinReason applies Group Relative Policy Optimization (GRPO) with verifiable rewa
 
 ```bash
 # 1. Clone
-git clone https://github.com/<your-username>/FinReason.git
+git clone https://github.com/OmSPatel20/FinReason.git
 cd FinReason
 
 # 2. Create environment
@@ -99,7 +99,7 @@ FinReason/
 
 ## Author
 
-**Om**  
+**Om Sanjaykumar Patel**  
 MS in AI Systems, University of Florida  
 Email: <your-email>  
 GitHub: <your-github>
