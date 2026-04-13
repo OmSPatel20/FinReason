@@ -23,7 +23,7 @@ if NUM_TEST and NUM_TEST < len(test): test = test.select(range(NUM_TEST))
 preds, gts, log = [], [], []
 for i in tqdm(range(len(test)),desc="Zero-shot"):
     q,gt = extract_qa(test[i]); ctx = extract_context(test[i])
-    ids = tokenizer(format_prompt(ctx,q),return_tensors="pt",truncation=True,max_length=1024).to(model.device)
+    ids = tokenizer(format_prompt(ctx,q,mode="eval"),return_tensors="pt",truncation=True,max_length=1024).to(model.device)
     with torch.no_grad():
         out = model.generate(**ids,max_new_tokens=128,do_sample=False,pad_token_id=tokenizer.eos_token_id)
     pred = tokenizer.decode(out[0][ids["input_ids"].shape[1]:],skip_special_tokens=True).strip()

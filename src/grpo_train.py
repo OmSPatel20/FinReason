@@ -2,7 +2,7 @@
 import torch, json, os, sys
 from datasets import load_dataset, Dataset
 sys.path.insert(0, os.path.dirname(__file__))
-from shared_utils import extract_qa, extract_context, format_prompt, reward_function, SYSTEM_MSG
+from shared_utils import extract_qa, extract_context, format_prompt, reward_function, SYSTEM_MSG_TRAIN
 
 MODEL_NAME = "Qwen/Qwen2.5-1.5B-Instruct"
 SFT_ADAPTER = "checkpoints/sft/final_adapter"
@@ -34,7 +34,7 @@ prompts, answers = [], []
 for i in range(min(MAX_TRAIN,len(train_raw))):
     q,a = extract_qa(train_raw[i]); ctx = extract_context(train_raw[i])
     if not a.strip(): continue
-    prompts.append(format_prompt(ctx,q,answer=None,max_context_chars=1000)); answers.append(a)
+    prompts.append(format_prompt(ctx,q,answer=None,max_context_chars=1000,mode="train")); answers.append(a)
 print(f"Prepared {len(prompts)} prompts")
 
 def finqa_reward_func(completions, **kwargs):

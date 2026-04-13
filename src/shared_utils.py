@@ -37,17 +37,28 @@ def extract_context(example):
     return "\n".join(parts)
 
 # === PROMPT FORMATTING ===
-SYSTEM_MSG = (
+SYSTEM_MSG_TRAIN = (
     "You are a financial analyst expert. Given financial data (tables and text), "
     "answer the question with a precise numerical answer. "
     "Think step by step in <think> tags, then give your final answer."
 )
 
-def format_prompt(context, question, answer=None, max_context_chars=1200):
+SYSTEM_MSG_EVAL = (
+    "You are a financial analyst. Given financial data, answer with ONLY "
+    "a single number or short phrase. No explanations. No words. Just the answer."
+)
+
+def format_prompt(context, question, answer=None, max_context_chars=1200, mode="train"):
+    """
+    mode="train" → uses think-tag prompt (for SFT training and GRPO)
+    mode="eval"  → uses strict short-answer prompt (for zero-shot and SFT eval)
+    mode="grpo_eval" → uses think-tag prompt (for GRPO eval, model learned to use them)
+    """
     if len(context) > max_context_chars:
         context = context[:max_context_chars] + "\n[...truncated...]"
+    sys_msg = SYSTEM_MSG_TRAIN if mode in ("train", "grpo_eval") else SYSTEM_MSG_EVAL
     prompt = (
-        f"<|im_start|>system\n{SYSTEM_MSG}<|im_end|>\n"
+        f"<|im_start|>system\n{sys_msg}<|im_end|>\n"
         f"<|im_start|>user\nFinancial Data:\n{context}\n\n"
         f"Question: {question}<|im_end|>\n<|im_start|>assistant\n"
     )

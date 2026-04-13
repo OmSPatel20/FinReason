@@ -30,7 +30,7 @@ preds, gts, log = [], [], []
 think_count = 0
 for i in tqdm(range(len(test)),desc="GRPO eval"):
     q,gt = extract_qa(test[i]); ctx = extract_context(test[i])
-    ids = tokenizer(format_prompt(ctx,q),return_tensors="pt",truncation=True,max_length=1024).to(model.device)
+    ids = tokenizer(format_prompt(ctx,q,mode="grpo_eval"),return_tensors="pt",truncation=True,max_length=1024).to(model.device)
     with torch.no_grad():
         out = model.generate(**ids,max_new_tokens=256,do_sample=False,pad_token_id=tokenizer.eos_token_id)
     pred = tokenizer.decode(out[0][ids["input_ids"].shape[1]:],skip_special_tokens=True).strip()
