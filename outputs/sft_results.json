@@ -1,0 +1,2108 @@
+{
+  "model": "Qwen/Qwen2.5-1.5B-Instruct",
+  "adapter": "checkpoints/sft/final_adapter",
+  "accuracy": 0.07,
+  "n": 300,
+  "results": [
+    {
+      "i": 0,
+      "q": "what was the change in cash provided by operating activities from 2010 to 2011 , in millions?",
+      "gt": "1768.0",
+      "pred": "-465.0",
+      "ok": false
+    },
+    {
+      "i": 1,
+      "q": "in rentable square , what was the change between 2005 and 2004?",
+      "gt": "819000.0",
+      "pred": "-80.0",
+      "ok": false
+    },
+    {
+      "i": 2,
+      "q": "what was the growth rate of the regulatory liability from 2016 to 2017",
+      "gt": "3.12903",
+      "pred": "0.01162",
+      "ok": false
+    },
+    {
+      "i": 3,
+      "q": "what is the stock price based on the dividend yield at the time that dividends were declared?",
+      "gt": "12.5",
+      "pred": "10.8",
+      "ok": false
+    },
+    {
+      "i": 4,
+      "q": "what is the average compensation expense per employee in 2003?",
+      "gt": "125143.12007",
+      "pred": "55.01682",
+      "ok": false
+    },
+    {
+      "i": 5,
+      "q": "what was the effective tax rate for pca in 2005?",
+      "gt": "0.40227",
+      "pred": "34.8",
+      "ok": false
+    },
+    {
+      "i": 6,
+      "q": "what is the total value of securities issued and approved by security holders , ( in millions ) ?",
+      "gt": "31.32382",
+      "pred": "3267.06",
+      "ok": false
+    },
+    {
+      "i": 7,
+      "q": "what percentage of trade and other accounts receivable are considered as doubtful receivables in 2013",
+      "gt": "0.02726",
+      "pred": "0.04587",
+      "ok": false
+    },
+    {
+      "i": 8,
+      "q": "what was the ratio of the basis point increase in 2010 compared to 2009",
+      "gt": "0.89744",
+      "pred": "1.6",
+      "ok": false
+    },
+    {
+      "i": 9,
+      "q": "what would total smokeless products shipment volume be in 2017 with the same growth rate as 2016 , in billions?",
+      "gt": "853.549",
+      "pred": "1.3",
+      "ok": false
+    },
+    {
+      "i": 10,
+      "q": "as of december 31 , 2010 , what was the total committed but unused credit facilities in millions?",
+      "gt": "1325.0",
+      "pred": "432.0",
+      "ok": false
+    },
+    {
+      "i": 11,
+      "q": "what is the growth rate in the balance of cash and cash equivalents on hand from 2016 to 2017?",
+      "gt": "-0.35474",
+      "pred": "-0.39021",
+      "ok": false
+    },
+    {
+      "i": 12,
+      "q": "did abiomed inc , outperform the nasdaq medical equipment index?\\\\n",
+      "gt": "yes",
+      "pred": "yes",
+      "ok": true
+    },
+    {
+      "i": 13,
+      "q": "is pretax pension expense in 2009 larger when compared with a pretax benefit in 2008?",
+      "gt": "yes",
+      "pred": "yes",
+      "ok": true
+    },
+    {
+      "i": 14,
+      "q": "what is the value of the shares purchased between october 1-31 2009",
+      "gt": "613009.2",
+      "pred": "47800000.0",
+      "ok": false
+    },
+    {
+      "i": 15,
+      "q": "in 2013 what was the percentage decline in free cash flow",
+      "gt": "-856.9",
+      "pred": "-0.45689",
+      "ok": false
+    },
+    {
+      "i": 16,
+      "q": "what is the percentage change in the total fair value of non-vested shares from 2009 to 2010?",
+      "gt": "-0.04148",
+      "pred": "0.36875",
+      "ok": false
+    },
+    {
+      "i": 17,
+      "q": "what is the ratio of operating cash flow to total debt in 2017?",
+      "gt": "3.57717",
+      "pred": "3.4562",
+      "ok": false
+    },
+    {
+      "i": 18,
+      "q": "what percentage of total cruise guests in 2016 were not european?",
+      "gt": "72.74167",
+      "pred": "0.33333",
+      "ok": false
+    },
+    {
+      "i": 19,
+      "q": "what percent of the total shares purchased during the fourth quarter of 2017 were purchased in december?",
+      "gt": "0.28449",
+      "pred": "0.6893",
+      "ok": false
+    },
+    {
+      "i": 20,
+      "q": "what was the five year average uncompounded annual return for the s&p 500?",
+      "gt": "20.926",
+      "pred": "11.87",
+      "ok": false
+    },
+    {
+      "i": 21,
+      "q": "in 2007 what was the ratio of the segment net sales to the operating earnings",
+      "gt": "6.37181",
+      "pred": "1.81118",
+      "ok": false
+    },
+    {
+      "i": 22,
+      "q": "on february 13 , 2009 what was the market capitalization",
+      "gt": "13764217.57366",
+      "pred": "1.1776",
+      "ok": false
+    },
+    {
+      "i": 23,
+      "q": "of the post-closing price adjustment of $ 20 million plus interest , what percentage was recognized as part of the impairment charge on the accompanying financial statements?",
+      "gt": "0.595",
+      "pred": "0.01",
+      "ok": false
+    },
+    {
+      "i": 24,
+      "q": "what was the percentage cumulative total shareholder return on disca for the five year period ended december 31 , 2018?",
+      "gt": "-0.4644",
+      "pred": "1.012",
+      "ok": false
+    },
+    {
+      "i": 25,
+      "q": "what were average operating profit for aeronautics in millions from 2008 to 2010?",
+      "gt": "1504.0",
+      "pred": "3679.0",
+      "ok": false
+    },
+    {
+      "i": 26,
+      "q": "in 2013 what percentage of total net revenues for the investing & lending segment were due to debt securities and loans?",
+      "gt": "0.27743",
+      "pred": "0.35162",
+      "ok": false
+    },
+    {
+      "i": 27,
+      "q": "what is the growth rate in net revenue for entergy mississippi , inc . in 2003?",
+      "gt": "0.12204",
+      "pred": "0.15033",
+      "ok": false
+    },
+    {
+      "i": 28,
+      "q": "what was the average effective tax rates for 2010 , 2009 and 2008?",
+      "gt": "29.33333",
+      "pred": "0.363",
+      "ok": false
+    },
+    {
+      "i": 29,
+      "q": "what is the percentage change in the system energy 2019s receivables from the money pool from 2015 to 2016?",
+      "gt": "-0.15321",
+      "pred": "-0.04761",
+      "ok": false
+    },
+    {
+      "i": 30,
+      "q": "what is the net change in the balance of deferred sales in 2010?",
+      "gt": "21.0",
+      "pred": "-10.01",
+      "ok": false
+    },
+    {
+      "i": 31,
+      "q": "what was the percentage change in the repurchase reserve between 2008 and 2009 , in millions?",
+      "gt": "5.42667",
+      "pred": "-34.5",
+      "ok": false
+    },
+    {
+      "i": 32,
+      "q": "what is the annual amortization expense related to customer relationships , in millions?",
+      "gt": "10.27",
+      "pred": "3.2",
+      "ok": false
+    },
+    {
+      "i": 33,
+      "q": "what is the income before tax in 2006?",
+      "gt": "4448.57143",
+      "pred": "598.0",
+      "ok": false
+    },
+    {
+      "i": 34,
+      "q": "what portion of the total support incentives is expected to be paid in 2009?",
+      "gt": "0.22006",
+      "pred": "0.5671",
+      "ok": false
+    },
+    {
+      "i": 35,
+      "q": "what is the percent change in basic net income available for common shareholders from 2006 to 2007?",
+      "gt": "-99.49966",
+      "pred": "-1.39",
+      "ok": false
+    },
+    {
+      "i": 36,
+      "q": "what is the growth rate in weighted average fair values of the company 2019s options granted from 2003 to 2004?",
+      "gt": "0.11551",
+      "pred": "-0.1047",
+      "ok": false
+    },
+    {
+      "i": 37,
+      "q": "was diluted-as reported net income per share greater than diluted-pro forma net income per share?",
+      "gt": "yes",
+      "pred": "yes",
+      "ok": true
+    },
+    {
+      "i": 38,
+      "q": "for december 31 , 2009 , what was the total value of segregated collateral for the benefit of brokerage customers in millions?",
+      "gt": "34.2",
+      "pred": "10000.0",
+      "ok": false
+    },
+    {
+      "i": 39,
+      "q": "how much more was the average wti crude price than the wcs price in 2012?",
+      "gt": "20.97",
+      "pred": "4.8",
+      "ok": false
+    },
+    {
+      "i": 40,
+      "q": "in 2013 what was the percent of the net periodic benefit cost attributable to the us",
+      "gt": "0.7236",
+      "pred": "0.67584",
+      "ok": false
+    },
+    {
+      "i": 41,
+      "q": "what percentage of total net revenues in 2012 where due to equity securities ( excluding icbc ) revenues?",
+      "gt": "0.40604",
+      "pred": "0.4213",
+      "ok": false
+    },
+    {
+      "i": 42,
+      "q": "in 2013 what was the ratio of the selling general and administrative expenses to the research development and related expenses",
+      "gt": "3.69643",
+      "pred": "1.01152",
+      "ok": false
+    },
+    {
+      "i": 43,
+      "q": "what is the fair value of hologic common stock used for acquiring r2?",
+      "gt": "46.70455",
+      "pred": "38.75",
+      "ok": false
+    },
+    {
+      "i": 44,
+      "q": "what is the net change the fair value of the long-term debt in 2011?",
+      "gt": "-2.9",
+      "pred": "-3.0",
+      "ok": false
+    },
+    {
+      "i": 45,
+      "q": "what is the net income margin for 2015?",
+      "gt": "0.18853",
+      "pred": "0.0789",
+      "ok": false
+    },
+    {
+      "i": 46,
+      "q": "in september 2008 what was the percent of the total volume and support incentives that was due in 2009",
+      "gt": "0.22006",
+      "pred": "0.57662",
+      "ok": false
+    },
+    {
+      "i": 47,
+      "q": "what is actual operating cash flow reported for 2011?",
+      "gt": "3.34978",
+      "pred": "-378.0",
+      "ok": false
+    },
+    {
+      "i": 48,
+      "q": "for asset category for positions accounted for at fair value , that are not included in var , in millions for 2018 and 2017 , what was the maximum debt value?",
+      "gt": "1890.0",
+      "pred": "3564.0",
+      "ok": false
+    },
+    {
+      "i": 49,
+      "q": "assuming a fmv of a share equal to 2000 , under the pre-december 31 , 2007 plan , approximately how many shares would each non-employee director receive annually?",
+      "gt": "90.0",
+      "pred": "2000.0",
+      "ok": false
+    },
+    {
+      "i": 50,
+      "q": "what was the average basic net income available for common shareholders from 2005 to 2007",
+      "gt": "223990.0",
+      "pred": "13.6",
+      "ok": false
+    },
+    {
+      "i": 51,
+      "q": "what was the change in millions of interest payments from 2009 to 2010?",
+      "gt": "-12.0",
+      "pred": "34.0",
+      "ok": false
+    },
+    {
+      "i": 52,
+      "q": "what was the ratio of the excess of the benefits over their fair value in 2015 to 2014 as of december 31 , 2015 and 2014 , the benefit obligations associated with these plans exceeded the fair value of the plan assets by $ 67 million and $ 51 million , respectively .",
+      "gt": "1.31373",
+      "pred": "1.32857",
+      "ok": false
+    },
+    {
+      "i": 53,
+      "q": "what is the percentage change in interest expense from 2015 to 2016?",
+      "gt": "-0.06475",
+      "pred": "0.01032",
+      "ok": false
+    },
+    {
+      "i": 54,
+      "q": "what portion of total rent obligations will be paid-off through sublease rental income?",
+      "gt": "0.08583",
+      "pred": "0.1411",
+      "ok": false
+    },
+    {
+      "i": 55,
+      "q": "as of dec 13 , 2013 , if all forfeited shares became vested , what percentage of shares would be vested?",
+      "gt": "0.31762",
+      "pred": "0.0005",
+      "ok": false
+    },
+    {
+      "i": 56,
+      "q": "what was the value , in billions of dollars , of operating expenses in 2000?",
+      "gt": "0.02898",
+      "pred": "1.628",
+      "ok": false
+    },
+    {
+      "i": 57,
+      "q": "what is the percentual contribution of the acquisition of firth rixson in the third-party sales in 2014?",
+      "gt": "0.04008",
+      "pred": "0.1718",
+      "ok": false
+    },
+    {
+      "i": 58,
+      "q": "what is the difference in the range of u.s equities permitted in the company's pension plan?",
+      "gt": "-14.64",
+      "pred": "5.0",
+      "ok": false
+    },
+    {
+      "i": 59,
+      "q": "what is the percentage change in common stock held by defined contribution plans from 2011 to 2012?",
+      "gt": "-0.06718",
+      "pred": "-0.04576",
+      "ok": false
+    },
+    {
+      "i": 60,
+      "q": "what is the roi of an investment in s&p500 in 2004 and sold in 2006?",
+      "gt": "0.2148",
+      "pred": "-0.78",
+      "ok": false
+    },
+    {
+      "i": 61,
+      "q": "what are the total operating expenses based on the aircraft fuel expense in 2017?",
+      "gt": "38121.82741",
+      "pred": "5649.0",
+      "ok": false
+    },
+    {
+      "i": 62,
+      "q": "how many years of tax examination is the company subject to in mississippi?",
+      "gt": "3.0",
+      "pred": "5.0",
+      "ok": false
+    },
+    {
+      "i": 63,
+      "q": "what is the growth rate in operating profit for mst in 2011?",
+      "gt": "-0.09537",
+      "pred": "0.0111",
+      "ok": false
+    },
+    {
+      "i": 64,
+      "q": "what is the growth rate in net reserves in 2006?",
+      "gt": "0.13518",
+      "pred": "-0.0801",
+      "ok": false
+    },
+    {
+      "i": 65,
+      "q": "what is the increase observed in the liabilities incurred during 2017 and 2018?",
+      "gt": "0.44359",
+      "pred": "-0.05",
+      "ok": false
+    },
+    {
+      "i": 66,
+      "q": "what is the average weighted average useful life ( years ) for purchased technology and customer contracts and relationships?",
+      "gt": "7.5",
+      "pred": "20.5",
+      "ok": false
+    },
+    {
+      "i": 67,
+      "q": "what is the percent change in total recurring capital expenditures from 2006 to 2007?",
+      "gt": "3.53735",
+      "pred": "-0.02168",
+      "ok": false
+    },
+    {
+      "i": 68,
+      "q": "for 2007 , what was the net income effect ( in millions ) of the sfas 157 transition adjustments?",
+      "gt": "630.0",
+      "pred": "40.0",
+      "ok": false
+    },
+    {
+      "i": 69,
+      "q": "as of december 26 , 2015 , what was the percent of the number of options vested to the total",
+      "gt": "0.82022",
+      "pred": "0.75",
+      "ok": false
+    },
+    {
+      "i": 70,
+      "q": "how many years did it take to close the pilgrim plant after after its last refueling?",
+      "gt": "2.0",
+      "pred": "2.0",
+      "ok": true
+    },
+    {
+      "i": 71,
+      "q": "what is the original value of computer software , in dollars?",
+      "gt": "1436.0",
+      "pred": "836.0",
+      "ok": false
+    },
+    {
+      "i": 72,
+      "q": "what portion of the sentinelle medical's purchase price is related to contingent consideration?",
+      "gt": "0.2582",
+      "pred": "0.7368",
+      "ok": false
+    },
+    {
+      "i": 73,
+      "q": "in 2015 what was the ratio of the defined benefit plan income to defined benefit plan recognition of actuarial losses",
+      "gt": "-2.44",
+      "pred": "0.4137",
+      "ok": false
+    },
+    {
+      "i": 74,
+      "q": "what is the expected growth rate in operating leases in 2010 compare to 2009?",
+      "gt": "-0.12736",
+      "pred": "-0.06818",
+      "ok": false
+    },
+    {
+      "i": 75,
+      "q": "what portion of the net change in net revenue during 2016 is related to the change in retail electric price?",
+      "gt": "0.82571",
+      "pred": "-0.9064",
+      "ok": false
+    },
+    {
+      "i": 76,
+      "q": "increased license costs are how much of the total year over year cost increases?",
+      "gt": "0.22059",
+      "pred": "0.34932",
+      "ok": false
+    },
+    {
+      "i": 77,
+      "q": "unrecognized prior service cost is what percent of prepaid pension cost as of december 31 1998?",
+      "gt": "0.37792",
+      "pred": "0.3853",
+      "ok": false
+    },
+    {
+      "i": 78,
+      "q": "what is the percentage reduction in the spending on the share repurchase program in 2006 compared to 2005?\\\\n",
+      "gt": "0.87238",
+      "pred": "0.0112",
+      "ok": false
+    },
+    {
+      "i": 79,
+      "q": "what was the percentage decrease from 2007 for 2009 for the cmg balance?",
+      "gt": "1.47092",
+      "pred": "-0.625",
+      "ok": false
+    },
+    {
+      "i": 80,
+      "q": "what was the change in non-trade receivables , included in other current assets , between september 29 , 2007 and september 30 , 2006 , in billions?",
+      "gt": "0.8",
+      "pred": "-0.02",
+      "ok": false
+    },
+    {
+      "i": 81,
+      "q": "what was the percentage change in loans retained from 2014 to 2015?",
+      "gt": "0.1003",
+      "pred": "-0.03768",
+      "ok": false
+    },
+    {
+      "i": 82,
+      "q": "for the five year period ending 12/31/2016 what was the difference in total performance between united parcel service inc . and the standard & poor 2019s 500 index?",
+      "gt": "-0.0837",
+      "pred": "-7.8",
+      "ok": false
+    },
+    {
+      "i": 83,
+      "q": "what was the cumulative percentage return for five year period ended 2013?",
+      "gt": "1.3934",
+      "pred": "-0.1165",
+      "ok": false
+    },
+    {
+      "i": 84,
+      "q": "what is the growth rate of the net earnings for basic and diluted eps?",
+      "gt": "-0.13342",
+      "pred": "0.0101",
+      "ok": false
+    },
+    {
+      "i": 85,
+      "q": "what was the total operating expenses in 2018 in millions",
+      "gt": "41932.20339",
+      "pred": "10085.6",
+      "ok": false
+    },
+    {
+      "i": 86,
+      "q": "what was the total value of the 1745 broadway property as of april 2007 based on the acquisition price?",
+      "gt": "1611903285.80285",
+      "pred": "1000000.0",
+      "ok": false
+    },
+    {
+      "i": 87,
+      "q": "during 2016 what was the percent of the number of shares bought in the fourth quarter",
+      "gt": "0.27179",
+      "pred": "0.4713",
+      "ok": false
+    },
+    {
+      "i": 88,
+      "q": "by how much is the net income reduced due to the impairment charges?",
+      "gt": "192.6",
+      "pred": "0.12357",
+      "ok": false
+    },
+    {
+      "i": 89,
+      "q": "what percentage decrease was there from the 2012 proved undeveloped reserves to 2013 proved undeveloped reserves?",
+      "gt": "36.60934",
+      "pred": "-0.42973",
+      "ok": false
+    },
+    {
+      "i": 90,
+      "q": "in 2016 what was the percent of the contractual obligations for future payments for purchase obligations due in 2017",
+      "gt": "0.89838",
+      "pred": "0.0438",
+      "ok": false
+    },
+    {
+      "i": 91,
+      "q": "what was the percentage decline in the total restricted cash and marketable securities from 2011 to 2012",
+      "gt": "-0.13397",
+      "pred": "-0.07811",
+      "ok": false
+    },
+    {
+      "i": 92,
+      "q": "what was the ratio of the value of the common stock masco to s&p 500 index in 2015",
+      "gt": "1.32151",
+      "pred": "1.33333",
+      "ok": true
+    },
+    {
+      "i": 93,
+      "q": "what percentage of future minimum rental payments are due after 2020?",
+      "gt": "0.45049",
+      "pred": "0.68333",
+      "ok": false
+    },
+    {
+      "i": 94,
+      "q": "in 2014 what was the ratio of the international paper interest in other entities to debt obligation listed in the financial statements",
+      "gt": "0.98113",
+      "pred": "1.9",
+      "ok": false
+    },
+    {
+      "i": 95,
+      "q": "what percentage of scheduled maturities of total debt at december 31 , 2001 are due in 2002?",
+      "gt": "0.12005",
+      "pred": "0.175",
+      "ok": false
+    },
+    {
+      "i": 96,
+      "q": "as of december 31 2017 what was percent of the net cash used for investing activities to the net cash provided by operating activities",
+      "gt": "0.71289",
+      "pred": "0.69039",
+      "ok": false
+    },
+    {
+      "i": 97,
+      "q": "what is the decrease in gross wholesale revenue as a percentage of 2003 net revenue?",
+      "gt": "0.08415",
+      "pred": "-0.0738",
+      "ok": false
+    },
+    {
+      "i": 98,
+      "q": "what was the percentage change in free cash flow from 2015 to 2016?",
+      "gt": "3.29962",
+      "pred": "0.1020",
+      "ok": false
+    },
+    {
+      "i": 99,
+      "q": "what is the net change in reserve for future policy benefits during 2012?",
+      "gt": "-1080.0",
+      "pred": "-10.01111",
+      "ok": false
+    },
+    {
+      "i": 100,
+      "q": "what percent of the total operating leases in 2007 are not related to the kendall square lease?",
+      "gt": "0.54282",
+      "pred": "0.8813",
+      "ok": false
+    },
+    {
+      "i": 101,
+      "q": "what portion of the total minimum lease payments is related to interest?",
+      "gt": "0.15666",
+      "pred": "0.18813",
+      "ok": false
+    },
+    {
+      "i": 102,
+      "q": "what portion of the long-term debt is reported as current liabilities as of december 312007?",
+      "gt": "0.06362",
+      "pred": "0.05231",
+      "ok": false
+    },
+    {
+      "i": 103,
+      "q": "what would rental expense for operating leases be in millions in 2009 with the same percentage increase in leases as in 2008?",
+      "gt": "379.19681",
+      "pred": "4.0",
+      "ok": false
+    },
+    {
+      "i": 104,
+      "q": "in 2011 what was the ratio of the entergy arkansas property and other generation resources generating capacity of nuclear to hydro",
+      "gt": "24.63514",
+      "pred": "4.0",
+      "ok": false
+    },
+    {
+      "i": 105,
+      "q": "hard assets are what percent of net assets acquired for the can and alcan acquisitions?",
+      "gt": "0.29841",
+      "pred": "0.01132",
+      "ok": false
+    },
+    {
+      "i": 106,
+      "q": "what percent of total contractual obligations is debt obligations?",
+      "gt": "0.54679",
+      "pred": "0.53333",
+      "ok": false
+    },
+    {
+      "i": 107,
+      "q": "what is the growth rate in operating profit for space systems in 2011?",
+      "gt": "0.03204",
+      "pred": "-0.0103",
+      "ok": false
+    },
+    {
+      "i": 108,
+      "q": "considering the year 2011 , what is the percentage of capital leases among the total future minimum payments?",
+      "gt": "0.02447",
+      "pred": "0.1813",
+      "ok": false
+    },
+    {
+      "i": 109,
+      "q": "in 2011 what was the ratio of the income tax benefit to the increase in the net income",
+      "gt": "1.74021",
+      "pred": "2.86711",
+      "ok": false
+    },
+    {
+      "i": 110,
+      "q": "what percent of their cumulative-effect adjustment gross was tax?",
+      "gt": "0.12711",
+      "pred": "0.1278",
+      "ok": true
+    },
+    {
+      "i": 111,
+      "q": "\\\\nas of december 31 , 2008 , what was the percent of the proceeds form the issuance of the tax exempt and other tax exempt financing as part of the restricted cash\\\\n",
+      "gt": "0.47357",
+      "pred": "0.0262",
+      "ok": false
+    },
+    {
+      "i": 112,
+      "q": "what was the percentage change in the annual operating cash flow between 2011 and 2012?",
+      "gt": "0.35511",
+      "pred": "-0.07871",
+      "ok": false
+    },
+    {
+      "i": 113,
+      "q": "what was the change in millions of total other income and expense from 2001 to 2002?",
+      "gt": "-222.0",
+      "pred": "-34.0",
+      "ok": false
+    },
+    {
+      "i": 114,
+      "q": "what was the average share price that the shares were repurchased in 2011?",
+      "gt": "34.228",
+      "pred": "38.11111",
+      "ok": false
+    },
+    {
+      "i": 115,
+      "q": "what was the average total compensation expense associated with the awards granted for the years ending december 31 , 2013 and 2014?",
+      "gt": "1.7",
+      "pred": "75.0",
+      "ok": false
+    },
+    {
+      "i": 116,
+      "q": "what percentage of total inventories is comprised of finished goods in 2008?",
+      "gt": "0.61046",
+      "pred": "0.6087",
+      "ok": true
+    },
+    {
+      "i": 117,
+      "q": "what is the working capital of bwe at the time of the acquisition?",
+      "gt": "184.5",
+      "pred": "56.0",
+      "ok": false
+    },
+    {
+      "i": 118,
+      "q": "if there were a 200bp rise in rates , how much more would the impact be on earnings in 2009 vs . 2008?",
+      "gt": "1930.0",
+      "pred": "456.0",
+      "ok": false
+    },
+    {
+      "i": 119,
+      "q": "as of december 31 , 2016 what was the percent of the outstanding authorized purchase capacity of the the october 2015 plan",
+      "gt": "0.50189",
+      "pred": "0.5",
+      "ok": true
+    },
+    {
+      "i": 120,
+      "q": "what was the change in millions of vehicles from 2015 to 2016?",
+      "gt": "-6.0",
+      "pred": "-9.0",
+      "ok": false
+    },
+    {
+      "i": 121,
+      "q": "what percentage of contractual obligations for future payments under existing debt and lease commitments and purchase obligations at december 31 , 2014 due in 2015 are purchase obligations?",
+      "gt": "0.78699",
+      "pred": "0.09333",
+      "ok": false
+    },
+    {
+      "i": 122,
+      "q": "what was the 5 year return on the nyse composite index?",
+      "gt": "1.17",
+      "pred": "-64.89",
+      "ok": false
+    },
+    {
+      "i": 123,
+      "q": "what is the percentage decrease in expenditures from 2017-2018?",
+      "gt": "0.27211",
+      "pred": "0.3813",
+      "ok": false
+    },
+    {
+      "i": 124,
+      "q": "considering the years 2014-2016 , what is the average operating income?",
+      "gt": "822.06667",
+      "pred": "80.0",
+      "ok": false
+    },
+    {
+      "i": 125,
+      "q": "what percentage of total minimum lease payments is due in 2004?",
+      "gt": "0.1681",
+      "pred": "0.13561",
+      "ok": false
+    },
+    {
+      "i": 126,
+      "q": "what is the change in percentage of accumulated other comprehensive income from 2006 to 2007?",
+      "gt": "0.38767",
+      "pred": "-0.01162",
+      "ok": false
+    },
+    {
+      "i": 127,
+      "q": "what was the ratio of the re-measurement gain from 2005 to 2004",
+      "gt": "2.71233",
+      "pred": "-0.8",
+      "ok": false
+    },
+    {
+      "i": 128,
+      "q": "what was total pretax income from discontinued operations for the three year period?",
+      "gt": "582.0",
+      "pred": "521.0",
+      "ok": false
+    },
+    {
+      "i": 129,
+      "q": "what is the average operating profit?",
+      "gt": "801.33333",
+      "pred": "535.0",
+      "ok": false
+    },
+    {
+      "i": 130,
+      "q": "what was the percentage change in net cash provided by operating activities between 2016 and 2017?",
+      "gt": "0.01385",
+      "pred": "-0.07071",
+      "ok": false
+    },
+    {
+      "i": 131,
+      "q": "what is the difference between the weighted- average useful lives of software for the global rolled products segment and the transportation and construction solutions one?",
+      "gt": "1.0",
+      "pred": "3.8",
+      "ok": false
+    },
+    {
+      "i": 132,
+      "q": "what was the change in millions of net sales for the commodity chemicals business that has been reclassified and reported as discontinued operations from 2012 to 2013?",
+      "gt": "-1580.0",
+      "pred": "-6.0",
+      "ok": false
+    },
+    {
+      "i": 133,
+      "q": "for the fourth quarter of 2015 , what percentage of total shares was repurchase in the december 1 2013 31 period?",
+      "gt": "0.23654",
+      "pred": "0.43333",
+      "ok": false
+    },
+    {
+      "i": 134,
+      "q": "what was the percentage change in rental income from 2006 to 2007?",
+      "gt": "-0.18072",
+      "pred": "-0.13498",
+      "ok": false
+    },
+    {
+      "i": 135,
+      "q": "what was the average revenues from 2013 to 2015",
+      "gt": "691.66667",
+      "pred": "670000000.0",
+      "ok": false
+    },
+    {
+      "i": 136,
+      "q": "what was the average we sublease rental income from 2005 to 2007",
+      "gt": "86501.5",
+      "pred": "1.0",
+      "ok": false
+    },
+    {
+      "i": 137,
+      "q": "what was the total in 2010 and 2009 for arcalyst ae net product sales?",
+      "gt": "43700000.0",
+      "pred": "4.3",
+      "ok": false
+    },
+    {
+      "i": 138,
+      "q": "for the july 2013 settled tax obligation resulting from the examination , what percent was recorded in the third quarter of fiscal 2013?",
+      "gt": "0.17476",
+      "pred": "0.15333",
+      "ok": false
+    },
+    {
+      "i": 139,
+      "q": "assuming full exercise of the options and warrants assumed , what is the total millions of shares of class a common stock in the spectrasite deal?",
+      "gt": "186.2",
+      "pred": "11.0",
+      "ok": false
+    },
+    {
+      "i": 140,
+      "q": "what was the percentage change in free cash flow from 2012 to 2013?",
+      "gt": "0.50868",
+      "pred": "-0.1011",
+      "ok": false
+    },
+    {
+      "i": 141,
+      "q": "what percentage of future minimum lease payments under noncancelable operating leases are due in 2018?",
+      "gt": "0.11864",
+      "pred": "0.13547",
+      "ok": false
+    },
+    {
+      "i": 142,
+      "q": "what is the total combined experience loss aon , ( in millions ) ?",
+      "gt": "3633.0",
+      "pred": "102.0",
+      "ok": false
+    },
+    {
+      "i": 143,
+      "q": "did abiomed outperform the nasdaq medical equipment index?",
+      "gt": "yes",
+      "pred": "yes",
+      "ok": true
+    },
+    {
+      "i": 144,
+      "q": "what percentage of total number of shares purchased were purchased in november?",
+      "gt": "0.24217",
+      "pred": "0.16781",
+      "ok": false
+    },
+    {
+      "i": 145,
+      "q": "at december 312003 what was the percent of the total company 2019s federal net operating loss carry forwards set to expire between 2009 to 2013",
+      "gt": "0.0132",
+      "pred": "0.08061",
+      "ok": false
+    },
+    {
+      "i": 146,
+      "q": "what is the net change in the balance of the other unrealized comprehensive income in 2001?",
+      "gt": "71.0",
+      "pred": "-75.0",
+      "ok": false
+    },
+    {
+      "i": 147,
+      "q": "what percentage of total minimum lease payments are operating leases?",
+      "gt": "0.71057",
+      "pred": "0.41538",
+      "ok": false
+    },
+    {
+      "i": 148,
+      "q": "what was the percentage change in rental income from 2007 to 2008?",
+      "gt": "0.27941",
+      "pred": "-0.13469",
+      "ok": false
+    },
+    {
+      "i": 149,
+      "q": "at december 31 , 2013 , for home equity lines of credit for which the borrower can no longer draw ( e.g . , draw period has ended or borrowing privileges have been terminated ) , approximately what percent were 30-89 days past due and 90 days or more past due?",
+      "gt": "9.14",
+      "pred": "0.0567",
+      "ok": false
+    },
+    {
+      "i": 150,
+      "q": "for the= quarter ended march 31 what was the percent of the change in the stock price from the highest to the lowest",
+      "gt": "0.09302",
+      "pred": "0.0865",
+      "ok": false
+    },
+    {
+      "i": 151,
+      "q": "in 2008 , how much percent did the board of directors increase the share repurchase program .",
+      "gt": "0.32258",
+      "pred": "0.6714",
+      "ok": false
+    },
+    {
+      "i": 152,
+      "q": "what percent did net revenue decrease between 2016 and 2017?",
+      "gt": "0.00327",
+      "pred": "-0.02521",
+      "ok": false
+    },
+    {
+      "i": 153,
+      "q": "in millions for 2013 and 2012 , what was the maximum tier 2 capital?",
+      "gt": "13632.0",
+      "pred": "13632.0",
+      "ok": true
+    },
+    {
+      "i": 154,
+      "q": "if the 2003 growth rate is the same as 2002 , what would 2003 electricity supplied equal ( million mwhrs ) ?",
+      "gt": "107.37895",
+      "pred": "101.0",
+      "ok": false
+    },
+    {
+      "i": 155,
+      "q": "what is the growth rate of net revenue from 2014 to 2015 ?",
+      "gt": "0.01639",
+      "pred": "0.0076",
+      "ok": false
+    },
+    {
+      "i": 156,
+      "q": "what was the growth rate of the grant date fair value of rsus vested from 2013 to 2014",
+      "gt": "0.22222",
+      "pred": "0.0685",
+      "ok": false
+    },
+    {
+      "i": 157,
+      "q": "what was the decline in matching buy/sell volumes in mbpd between 2006 and 2005?",
+      "gt": "-53.0",
+      "pred": "-0.03",
+      "ok": false
+    },
+    {
+      "i": 158,
+      "q": "what is the net income reported in 2008 , ( in millions ) ?",
+      "gt": "-2757.233",
+      "pred": "10.6",
+      "ok": false
+    },
+    {
+      "i": 159,
+      "q": "what is the percentage change in the expected minimum payments from 2014 to 2015?",
+      "gt": "-2072.0",
+      "pred": "0.31031",
+      "ok": false
+    },
+    {
+      "i": 160,
+      "q": "what was the average entergy new orleans 2019s receivables from the money pool from 2014 to 2017",
+      "gt": "26938.0",
+      "pred": "14611.0",
+      "ok": false
+    },
+    {
+      "i": 161,
+      "q": "based on the given average price per share , how much money did the repurchases cost in 2007?",
+      "gt": "643822.41",
+      "pred": "40000000.0",
+      "ok": false
+    },
+    {
+      "i": 162,
+      "q": "what is the net of increases related to tax positions taken during a prior period and decreases related to tax positions taken during a prior period , in millions?",
+      "gt": "-43.0",
+      "pred": "-10.0",
+      "ok": false
+    },
+    {
+      "i": 163,
+      "q": "what was the net change in millions in unrecognized tax benefits from 2015 to 2016?",
+      "gt": "-12.0",
+      "pred": "-12.0",
+      "ok": true
+    },
+    {
+      "i": 164,
+      "q": "do residential mortgage products have a longer past due period than other consumer products ? .",
+      "gt": "yes",
+      "pred": "no",
+      "ok": false
+    },
+    {
+      "i": 165,
+      "q": "what was the change in non-trade receivables , which are included in the consolidated balance sheets in other current assets , between september 24 , 2005 and september 25 , 2004 , in millions?",
+      "gt": "141.0",
+      "pred": "-2.0",
+      "ok": false
+    },
+    {
+      "i": 166,
+      "q": "what was the percentage increase in the total assets from 2007 to 2008",
+      "gt": "0.02632",
+      "pred": "0.13514",
+      "ok": false
+    },
+    {
+      "i": 167,
+      "q": "what was the average weighted average common shares outstanding for diluted computations from 2015 to 2017",
+      "gt": "302.8",
+      "pred": "908.0",
+      "ok": false
+    },
+    {
+      "i": 168,
+      "q": "what amount of interest expense was avoided per year by switching the 201c4.50% ( 201c4.50 % ) notes 201d with the 201c4.25% ( 201c4.25 % ) notes 201d?",
+      "gt": "100000000.0",
+      "pred": "-1.1",
+      "ok": false
+    },
+    {
+      "i": 169,
+      "q": "what is the percentage change in common shareholders 2019 equity due to the adjustments presented in the table to reach basel iii cet1?",
+      "gt": "-0.18309",
+      "pred": "-0.07807",
+      "ok": false
+    },
+    {
+      "i": 170,
+      "q": "what would the 2012 shares outstanding in millions have been without the acquisition of smith international?",
+      "gt": "1152.0",
+      "pred": "1334.0",
+      "ok": false
+    },
+    {
+      "i": 171,
+      "q": "was the estimated sensitivity to a one basis point increase in credit spreads ( counterparty and our own ) on derivatives greater than the estimated sensitivity to a one basis point increase in our own credit spreads on unsecured borrowings for which the fair value option was elected as of december 2012?",
+      "gt": "no",
+      "pred": "yes",
+      "ok": false
+    },
+    {
+      "i": 172,
+      "q": "how bigger were the interest and penalties concerning the interest income in the year 2015?",
+      "gt": "3.0",
+      "pred": "-32.0",
+      "ok": false
+    },
+    {
+      "i": 173,
+      "q": "what was the percentage increase for diesel fuel prices from 2009 to 2010?",
+      "gt": "0.30857",
+      "pred": "0.31",
+      "ok": true
+    },
+    {
+      "i": 174,
+      "q": "what percentage of total purchase commitments are due after 2018?",
+      "gt": "0.05555",
+      "pred": "0.46333",
+      "ok": false
+    },
+    {
+      "i": 175,
+      "q": "what is the net change in cash in 2010?",
+      "gt": "-135.0",
+      "pred": "-3816.0",
+      "ok": false
+    },
+    {
+      "i": 176,
+      "q": "what is the maximum exposure to loss for entergy if no cash is repaid to domestic utility companies , in millions?",
+      "gt": "25.0",
+      "pred": "6800.0",
+      "ok": false
+    },
+    {
+      "i": 177,
+      "q": "what was the difference in cash payments related to exit costs at pmi from 2014 to 2015 in millions?",
+      "gt": "-128.0",
+      "pred": "-288.0",
+      "ok": false
+    },
+    {
+      "i": 178,
+      "q": "in 2009 what was the percentage change in the allowance balance for the uncollectable accounts",
+      "gt": "1.48389",
+      "pred": "-0.345761",
+      "ok": false
+    },
+    {
+      "i": 179,
+      "q": "total cash consideration was what percent of the enterprise value of dpl?",
+      "gt": "0.73808",
+      "pred": "0.71429",
+      "ok": false
+    },
+    {
+      "i": 180,
+      "q": "what was the operating margin in the 4th quarter",
+      "gt": "0.07473",
+      "pred": "0.0525",
+      "ok": false
+    },
+    {
+      "i": 181,
+      "q": "what is the expected change according to the model in the fair value per share between 2012 and 2013?",
+      "gt": "-4.46",
+      "pred": "-0.04567",
+      "ok": false
+    },
+    {
+      "i": 182,
+      "q": "what is the total amount of notes issued by kilimanjaro in 2014 , in thousands?",
+      "gt": "950000.0",
+      "pred": "10.0",
+      "ok": false
+    },
+    {
+      "i": 183,
+      "q": "what was the change in total accumulated other comprehensive losses in millions from 2013 to 2014?",
+      "gt": "-2636.0",
+      "pred": "-2636.0",
+      "ok": true
+    },
+    {
+      "i": 184,
+      "q": "what percentage of total contractual obligations do long-term debt obligations make up as of december 30 2017?",
+      "gt": "0.64109",
+      "pred": "0.65161",
+      "ok": false
+    },
+    {
+      "i": 185,
+      "q": "what portion of the total 2015 restructuring programs is related to facility closer costs?",
+      "gt": "0.03664",
+      "pred": "0.78333",
+      "ok": false
+    },
+    {
+      "i": 186,
+      "q": "what is the change in liability balance during 2015?",
+      "gt": "-216.0",
+      "pred": "-29.0",
+      "ok": false
+    },
+    {
+      "i": 187,
+      "q": "based on the summary of changes in mortgage repurchase liability what was the percent of the change in the repurchase liability",
+      "gt": "-0.59618",
+      "pred": "358.0",
+      "ok": false
+    },
+    {
+      "i": 188,
+      "q": "what was the total cost of all shares of common stock upon the exercise of outstanding stock options that were approved by security holders?",
+      "gt": "552853088.46",
+      "pred": "584800000.0",
+      "ok": false
+    },
+    {
+      "i": 189,
+      "q": "what portion of the equity compensation plan approved by security holders remains available for future issuance?",
+      "gt": "0.48519",
+      "pred": "0.9633",
+      "ok": false
+    },
+    {
+      "i": 190,
+      "q": "as of december 312011 what was the percentage increase in the unrealized foreign currency exchange rate gains ( losses )",
+      "gt": "2.14609",
+      "pred": "-0.06938",
+      "ok": false
+    },
+    {
+      "i": 191,
+      "q": "at december 31 , 2010 , what was the ratio of the anticipated benefit payments from the plan in future for 2015 to 2016-2020",
+      "gt": "6.28",
+      "pred": "1.04167",
+      "ok": false
+    },
+    {
+      "i": 192,
+      "q": "without the commercial banking segment , what would 2005 operating income have been reduced to , in us$ m?",
+      "gt": "9514.0",
+      "pred": "10.9",
+      "ok": false
+    },
+    {
+      "i": 193,
+      "q": "for 2011 and 2012 , what were average commercial mortgage recourse obligations in millions?",
+      "gt": "45.0",
+      "pred": "356.0",
+      "ok": false
+    },
+    {
+      "i": 194,
+      "q": "what percentage of the total purchase price did intangible assets represent?",
+      "gt": "0.21828",
+      "pred": "0.4385",
+      "ok": false
+    },
+    {
+      "i": 195,
+      "q": "what is the net change in shareholders 2019 equity in 2010 ( in millions ) ?",
+      "gt": "3307.0",
+      "pred": "3.3",
+      "ok": false
+    },
+    {
+      "i": 196,
+      "q": "in 2012 what was the percent change in the number of shares that was not vested",
+      "gt": "-905.0",
+      "pred": "0.34756",
+      "ok": false
+    },
+    {
+      "i": 197,
+      "q": "what percentage of total assets acquired was related to goodwill?",
+      "gt": "0.36183",
+      "pred": "0.6875",
+      "ok": false
+    },
+    {
+      "i": 198,
+      "q": "what is the growth rate of operating expenses from 2009 to 2010?",
+      "gt": "-0.05311",
+      "pred": "-0.04562",
+      "ok": false
+    },
+    {
+      "i": 199,
+      "q": "what will be the balance of aggregate carrying value of long-term debt as of december 31 , 2009?",
+      "gt": "4331309.0",
+      "pred": "687.0",
+      "ok": false
+    },
+    {
+      "i": 200,
+      "q": "what was the difference in operating profit for europe as a percentage of net sales between 2001 and 2003?",
+      "gt": "6.8",
+      "pred": "-0.04",
+      "ok": false
+    },
+    {
+      "i": 201,
+      "q": "in millions , what is the range for accrued wages and vacation from 2009-2010?",
+      "gt": "18.0",
+      "pred": "18.0",
+      "ok": true
+    },
+    {
+      "i": 202,
+      "q": "what is the difference in millions of subscribers between discovery channel international subscribers and discovery science international subscribers?",
+      "gt": "147.0",
+      "pred": "-35.0",
+      "ok": false
+    },
+    {
+      "i": 203,
+      "q": "what was the operating margin for 2004?",
+      "gt": "0.07433",
+      "pred": "0.097",
+      "ok": false
+    },
+    {
+      "i": 204,
+      "q": "based on the investment in solexa on november 12 , 2006 what was the price per share in the transaction in dollars",
+      "gt": "1e-05",
+      "pred": "38.57142",
+      "ok": false
+    },
+    {
+      "i": 205,
+      "q": "what was 2002 return on stockholder's equity for the less than 50% ( 50 % ) owned investments , based on net income?",
+      "gt": "0.07433",
+      "pred": "-0.03333",
+      "ok": false
+    },
+    {
+      "i": 206,
+      "q": "in thousands of bbl per day , what was average gasoline production during the three year period?",
+      "gt": "792.33333",
+      "pred": "830.0",
+      "ok": false
+    },
+    {
+      "i": 207,
+      "q": "by what percentage will the space in one north endnew york new york decrease in 2019?",
+      "gt": "-0.0625",
+      "pred": "-0.06",
+      "ok": false
+    },
+    {
+      "i": 208,
+      "q": "what were gross realized gains for 2014 without the make whole settlement netting?",
+      "gt": "64.0",
+      "pred": "3587.0",
+      "ok": false
+    },
+    {
+      "i": 209,
+      "q": "what was the fair value of the interest agreements at december 31 , 2007 to 2006",
+      "gt": "3.0",
+      "pred": "-2.0",
+      "ok": false
+    },
+    {
+      "i": 210,
+      "q": "what was the change in millions of total other income and expense from 2000 to 2001?",
+      "gt": "-278.0",
+      "pred": "-34.0",
+      "ok": false
+    },
+    {
+      "i": 211,
+      "q": "what percentage of net assets acquired is amortizable intangible assets?",
+      "gt": "0.07339",
+      "pred": "0.52333",
+      "ok": false
+    },
+    {
+      "i": 212,
+      "q": "what is the percent change in pre tax catastrophe losses between 2007 and 2008?",
+      "gt": "1.27687",
+      "pred": "3.5",
+      "ok": false
+    },
+    {
+      "i": 213,
+      "q": "considering the changes in eog's total proved undeveloped reserves during 2018 , 2017 , and 2016 , what is the average value of extensions and discoveries?",
+      "gt": "288734.66667",
+      "pred": "41781.66667",
+      "ok": false
+    },
+    {
+      "i": 214,
+      "q": "what was the total amount of money set aside from the market cap for restricted stock in 2014?",
+      "gt": "138550.48",
+      "pred": "10.8",
+      "ok": false
+    },
+    {
+      "i": 215,
+      "q": "what was the percent of the decline in net income ( loss ) attributable to common shareholders from 2007 to 2008",
+      "gt": "-0.76216",
+      "pred": "-0.31118",
+      "ok": false
+    },
+    {
+      "i": 216,
+      "q": "what was connected fitness as a percentage of total net revenue in 2018?",
+      "gt": "0.02318",
+      "pred": "0.0235",
+      "ok": false
+    },
+    {
+      "i": 217,
+      "q": "what was the percentage change in the gross unrecognized tax benefits between 2011 and 2012?",
+      "gt": "0.49964",
+      "pred": "0.81111",
+      "ok": false
+    },
+    {
+      "i": 218,
+      "q": "what was the percentage change in our accrued trade and consumer promotion liability from 2005 to 2006",
+      "gt": "0.19788",
+      "pred": "0.91111",
+      "ok": false
+    },
+    {
+      "i": 219,
+      "q": "what was the change in equipment rents payable in millions from 2008 to 2009?",
+      "gt": "-4.0",
+      "pred": "13.0",
+      "ok": false
+    },
+    {
+      "i": 220,
+      "q": "what portion of total future obligations is related to purchase obligations as of march 31 , 2007?",
+      "gt": "0.45571",
+      "pred": "0.46334",
+      "ok": false
+    },
+    {
+      "i": 221,
+      "q": "what is the average , in millions , home equity line of credit with balloon payments with draw periods from 2012 to 2016?",
+      "gt": "151.2",
+      "pred": "10.0",
+      "ok": false
+    },
+    {
+      "i": 222,
+      "q": "by what percentage did protect carrying values of excess inventories increase from 2002 to 2003?",
+      "gt": "0.39024",
+      "pred": "-0.07813",
+      "ok": false
+    },
+    {
+      "i": 223,
+      "q": "what was the percentage change in total rent expense from 2006 to 2007?",
+      "gt": "0.19293",
+      "pred": "0.17037",
+      "ok": false
+    },
+    {
+      "i": 224,
+      "q": "what percentage of future minimum lease payments under noncancelable operating leases having remaining terms in excess of one year are due after 2012?",
+      "gt": "0.43298",
+      "pred": "0.43333",
+      "ok": true
+    },
+    {
+      "i": 225,
+      "q": "based on the weighted average grant date fair value ( per share ) , what was the total granted rsu cost during 2017?",
+      "gt": "11736600.0",
+      "pred": "121.4",
+      "ok": false
+    },
+    {
+      "i": 226,
+      "q": "what was the change in the amount of future annual commitments related to minimum quantities of purchased water between \\\\n2019 and 2020?",
+      "gt": "0.0",
+      "pred": "0.05",
+      "ok": false
+    },
+    {
+      "i": 227,
+      "q": "in december 2011 what was the ratio of the receivables to the credit facility outstanding",
+      "gt": "2368.3",
+      "pred": "0.23048",
+      "ok": false
+    },
+    {
+      "i": 228,
+      "q": "in 2010 what was the percentage change in the unrecognized tax benefits,",
+      "gt": "-0.18052",
+      "pred": "-0.1056",
+      "ok": false
+    },
+    {
+      "i": 229,
+      "q": "what percentage of the total number of shares purchased were purchased in october?",
+      "gt": "0.038",
+      "pred": "0.39037",
+      "ok": false
+    },
+    {
+      "i": 230,
+      "q": "as of december 312017 what was the ratio of the value of the lilly to the peer group",
+      "gt": "1.43553",
+      "pred": "1.921",
+      "ok": false
+    },
+    {
+      "i": 231,
+      "q": "what was the average catastrophe losses from 2008 to 2010 in millions",
+      "gt": "356.66667",
+      "pred": "1000.0",
+      "ok": false
+    },
+    {
+      "i": 232,
+      "q": "as of december 31 , 2008 , future base rental revenue under non-cancelable operating leases , excluding rents for leases with an original term of less than one year and rents resulting from the exercise of renewal options , totaled what ( in thousands ) for the years ending december 31 2009 and 2010?",
+      "gt": "3524000.0",
+      "pred": "3464000.0",
+      "ok": false
+    },
+    {
+      "i": 233,
+      "q": "what is the percentage change in the gross amount of unrecognized tax benefit during 2007?",
+      "gt": "-0.09002",
+      "pred": "-0.0116",
+      "ok": false
+    },
+    {
+      "i": 234,
+      "q": "what is the percentage increase in interest expense?",
+      "gt": "0.02581",
+      "pred": "-0.05312",
+      "ok": false
+    },
+    {
+      "i": 235,
+      "q": "what the difference of the held-to-maturity securities at cost and at fair value as of january 30 , 2009 , in millions?",
+      "gt": "2.5",
+      "pred": "2.5",
+      "ok": true
+    },
+    {
+      "i": 236,
+      "q": "in 2015 what was the percent of the total second generation capital expenditures by type of expenditure that wassecond generation leasing costs",
+      "gt": "0.79477",
+      "pred": "0.34769",
+      "ok": false
+    },
+    {
+      "i": 237,
+      "q": "north american consumer packaging net sales where what percentage of consumer packaging sales in 2008?",
+      "gt": "0.78247",
+      "pred": "0.41321",
+      "ok": false
+    },
+    {
+      "i": 238,
+      "q": "what percentage of the change in net revenue between 2012 and 2013 is due to volume/weather ?",
+      "gt": "0.07207",
+      "pred": "0.071815",
+      "ok": true
+    },
+    {
+      "i": 239,
+      "q": "what was the average total stock-based compensation expense from 2008 to 2010 in millions",
+      "gt": "329.5",
+      "pred": "122.0",
+      "ok": false
+    },
+    {
+      "i": 240,
+      "q": "what is the percentage change in the average total short-duration advances from 2013 to 2014?",
+      "gt": "0.03148",
+      "pred": "0.09235",
+      "ok": false
+    },
+    {
+      "i": 241,
+      "q": "by what percentage did protect carrying values of excess inventories increase from 2002 to 2003?",
+      "gt": "0.39024",
+      "pred": "-0.07813",
+      "ok": false
+    },
+    {
+      "i": 242,
+      "q": "what was the percentage change in the annual operating cash flow between 2010 and 2011?",
+      "gt": "1.01823",
+      "pred": "-0.07871",
+      "ok": false
+    },
+    {
+      "i": 243,
+      "q": "in the fourth quarter of 2018 vs . 2017 , what was the increase in the cash dividend per share?",
+      "gt": "0.04",
+      "pred": "0.04545",
+      "ok": false
+    },
+    {
+      "i": 244,
+      "q": "in 2012 what percentage of total subsidiary trusts obligations are due to bank subsidiary?",
+      "gt": "0.40622",
+      "pred": "0.46339",
+      "ok": false
+    },
+    {
+      "i": 245,
+      "q": "what was the percentage change in rent expenses included in selling , general and administrative expense from 2014 to 2015?",
+      "gt": "0.40678",
+      "pred": "0.71429",
+      "ok": false
+    },
+    {
+      "i": 246,
+      "q": "by how much did the intrinsic value decrease from 2016 to 2018?",
+      "gt": "-0.5",
+      "pred": "-0.44444",
+      "ok": false
+    },
+    {
+      "i": 247,
+      "q": "what portion of the total number of securities approved by security holders is issued?",
+      "gt": "0.32012",
+      "pred": "0.93475",
+      "ok": false
+    },
+    {
+      "i": 248,
+      "q": "considering the years 2011-2012 , what is the variation observed in the lease obligations?",
+      "gt": "24.0",
+      "pred": "4.0",
+      "ok": false
+    },
+    {
+      "i": 249,
+      "q": "what was the percentage change in net derivative liabilities under bilateral agreements from 2012 to 2013?",
+      "gt": "-0.20473",
+      "pred": "-0.45768",
+      "ok": false
+    },
+    {
+      "i": 250,
+      "q": "what is the percent of americans labor-related deemed claim as a part of the total claims and other bankruptcy settlement obligations as of december2013",
+      "gt": "0.15653",
+      "pred": "0.1783",
+      "ok": false
+    },
+    {
+      "i": 251,
+      "q": "what is the net change in interest rate instruments from 2017 to 2018?",
+      "gt": "8.1",
+      "pred": "-346.0",
+      "ok": false
+    },
+    {
+      "i": 252,
+      "q": "as of december 31 , 2015 what was the 2016 percent of non-cancelable operating leases as part of the total minimum future lease payments",
+      "gt": "0.12108",
+      "pred": "0.1011",
+      "ok": false
+    },
+    {
+      "i": 253,
+      "q": "what is the percentage of the discrete ax benefit as a part of the balance at december 312013",
+      "gt": "0.21977",
+      "pred": "0.21539",
+      "ok": false
+    },
+    {
+      "i": 254,
+      "q": "what is the percentage increase in the net cash provided by operating activities in 2010 compare to 2009?",
+      "gt": "0.11787",
+      "pred": "0.13731",
+      "ok": false
+    },
+    {
+      "i": 255,
+      "q": "what percentage of minimum annual future rental commitment under operating leases that have initial or remaining non-cancelable lease terms is payable in 2022?",
+      "gt": "123.0",
+      "pred": "0.13568",
+      "ok": false
+    },
+    {
+      "i": 256,
+      "q": "if the anti-dilutive common shares were not excluded from the diluted weighted-average shares outstanding for the year ended december 31 , 2015 , what would the total diluted weighted-average shares outstanding be , in millions?",
+      "gt": "172.2",
+      "pred": "178.6",
+      "ok": false
+    },
+    {
+      "i": 257,
+      "q": "what is the growth rate in rent expense and certain office equipment expense in 2012 compare to 2011?",
+      "gt": "-0.13636",
+      "pred": "-0.0404",
+      "ok": false
+    },
+    {
+      "i": 258,
+      "q": "what percentage of total net revenue investing & lending segment is due to equity securities in 2015?",
+      "gt": "0.69555",
+      "pred": "0.2223",
+      "ok": false
+    },
+    {
+      "i": 259,
+      "q": "what percent of total full-time employees are in entergy nuclear operations?",
+      "gt": "0.22796",
+      "pred": "0.34568",
+      "ok": false
+    },
+    {
+      "i": 260,
+      "q": "what was the 2003 improvement in the 30+ day delinquency rate , ( us$ b ) ?",
+      "gt": "0.1232",
+      "pred": "0.08",
+      "ok": false
+    },
+    {
+      "i": 261,
+      "q": "what was the approximate fair value of the shares vest in 2009",
+      "gt": "538763257.76",
+      "pred": "34.6",
+      "ok": false
+    },
+    {
+      "i": 262,
+      "q": "what was the percentage gain on the sale of starter brand business?",
+      "gt": "0.91083",
+      "pred": "0.3875",
+      "ok": false
+    },
+    {
+      "i": 263,
+      "q": "what is the rate of return in nasdaq of an investment from 2010 to 2011?",
+      "gt": "0.1761",
+      "pred": "-0.0766",
+      "ok": false
+    },
+    {
+      "i": 264,
+      "q": "how much of the oil production is estimated to be produced from unproved reserves at dec 31 , 2004 , in mmbbls?",
+      "gt": "0.63158",
+      "pred": "5.78",
+      "ok": false
+    },
+    {
+      "i": 265,
+      "q": "considering the years 2013 and 2012 , what is the variation observed in the expected return on plan assets , in millions?",
+      "gt": "127.0",
+      "pred": "-4.7",
+      "ok": false
+    },
+    {
+      "i": 266,
+      "q": "what was the ratio of the labor-related deemed claim to the professional fees as part of the re-organization",
+      "gt": "0.87085",
+      "pred": "8.0",
+      "ok": false
+    },
+    {
+      "i": 267,
+      "q": "what is the change in estimated future benefit payments , which reflect expected future employee service , as of december 31 , 2013 , from 2015 to 2016 in millions?",
+      "gt": "80.0",
+      "pred": "-47.0",
+      "ok": false
+    },
+    {
+      "i": 268,
+      "q": "what percentage of total shares purchased was purchased in december?",
+      "gt": "36.55148",
+      "pred": "0.11111",
+      "ok": false
+    },
+    {
+      "i": 269,
+      "q": "what was the change in property plant and equipment net from 2012 to 2013 in millions?",
+      "gt": "1145.0",
+      "pred": "-56.0",
+      "ok": false
+    },
+    {
+      "i": 270,
+      "q": "what was the lowest amount of research and development credit net in the three year period , in millions?",
+      "gt": "-26.0",
+      "pred": "-26.0",
+      "ok": true
+    },
+    {
+      "i": 271,
+      "q": "what is the percentage change in the balance of target date/risk from 2016 to 2017?",
+      "gt": "0.33483",
+      "pred": "-0.345833",
+      "ok": false
+    },
+    {
+      "i": 272,
+      "q": "what portion of the total repurchase of share has occurred during november?",
+      "gt": "0.40538",
+      "pred": "0.3913",
+      "ok": false
+    },
+    {
+      "i": 273,
+      "q": "what was the average 2010 and 2009 total liability for the mrrp , in millions?",
+      "gt": "20.6",
+      "pred": "10.8",
+      "ok": false
+    },
+    {
+      "i": 274,
+      "q": "what was the percent of the net assets acquired allocated to current assets",
+      "gt": "0.09412",
+      "pred": "0.0683",
+      "ok": false
+    },
+    {
+      "i": 275,
+      "q": "what is the ratio between the value of vehicles and buildings and improvements?",
+      "gt": "0.12821",
+      "pred": "7.8",
+      "ok": false
+    },
+    {
+      "i": 276,
+      "q": "what percentage of the beginning balance of 2010 was vested during the year?",
+      "gt": "0.06593",
+      "pred": "0.5731",
+      "ok": false
+    },
+    {
+      "i": 277,
+      "q": "for the quarter ended december 31 , 2007 what was the percent of the shared bought in october",
+      "gt": "0.04298",
+      "pred": "0.461",
+      "ok": false
+    },
+    {
+      "i": 278,
+      "q": "what is the highest income from performance plans?",
+      "gt": "67.0",
+      "pred": "67.0",
+      "ok": true
+    },
+    {
+      "i": 279,
+      "q": "what was the change in average ib and other var diversification benefit in millions during 2010?",
+      "gt": "-23.0",
+      "pred": "-23.0",
+      "ok": true
+    },
+    {
+      "i": 280,
+      "q": "what was the ratio of the the total indemnification and repurchase liability for estimated losses on indemnification and repurchase claims \\\\n",
+      "gt": "424.0",
+      "pred": "1.34759",
+      "ok": false
+    },
+    {
+      "i": 281,
+      "q": "in 2011 what was the percent of the shares granted under the legacy frontier plan in july",
+      "gt": "0.63474",
+      "pred": "0.01231",
+      "ok": false
+    },
+    {
+      "i": 282,
+      "q": "in 2009 what was the percent of the maturities of long-term debt of the total contractual obligations for future payments",
+      "gt": "0.76023",
+      "pred": "0.11304",
+      "ok": false
+    },
+    {
+      "i": 283,
+      "q": "what is the difference in the total capital ratio between the advanced approaches and the standardized approach at december 31 , 2015?",
+      "gt": "-1.78",
+      "pred": "-0.06",
+      "ok": false
+    },
+    {
+      "i": 284,
+      "q": "what was the change in millions of ipalco common stock from 2015 to 2016?",
+      "gt": "158.0",
+      "pred": "158.0",
+      "ok": true
+    },
+    {
+      "i": 285,
+      "q": "assuming the same rate of change as in 2017 , what would the 2018 total amount of interest and penalties accrued equal in millions?",
+      "gt": "205.40833",
+      "pred": "1360.0",
+      "ok": false
+    },
+    {
+      "i": 286,
+      "q": "what is the growth rate in brent oil prices from 2017 to 2018?",
+      "gt": "0.31818",
+      "pred": "-0.45961",
+      "ok": false
+    },
+    {
+      "i": 287,
+      "q": "what was the percent of the 2008 maturities as a part of the total maturities",
+      "gt": "0.01417",
+      "pred": "0.073019",
+      "ok": false
+    },
+    {
+      "i": 288,
+      "q": "what was the total value of the 100 park avenue property based in the acquisition price?",
+      "gt": "191983967.93587",
+      "pred": "10000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+      "ok": false
+    },
+    {
+      "i": 289,
+      "q": "what is the percentage change in net cash from operating activities from 2010 to 2011?",
+      "gt": "0.47075",
+      "pred": "-0.50134",
+      "ok": false
+    },
+    {
+      "i": 290,
+      "q": "as part of the following purchase of 161 acres of undeveloped land and a 12-acre container storage facility in houstonwhat was the percent of the total purchase price allocated to in-service real estate assets",
+      "gt": "0.7146",
+      "pred": "0.7033",
+      "ok": false
+    },
+    {
+      "i": 291,
+      "q": "what is the percent change of the beginning and ending amount of unrecognized tax benefits in 2009?",
+      "gt": "-0.15585",
+      "pred": "-0.14231",
+      "ok": false
+    },
+    {
+      "i": 292,
+      "q": "what percentage of employees are subject to collective bargaining agreements?",
+      "gt": "0.14509",
+      "pred": "0.48571",
+      "ok": false
+    },
+    {
+      "i": 293,
+      "q": "what is the percent of the principal payments scheduled after 2011 to the total amount",
+      "gt": "0.45455",
+      "pred": "0.4875",
+      "ok": false
+    },
+    {
+      "i": 294,
+      "q": "what was average weighted average useful life ( years ) for customer contracts and relationships and trademarks?",
+      "gt": "8.5",
+      "pred": "6.33333",
+      "ok": false
+    },
+    {
+      "i": 295,
+      "q": "what portion of the total future minimum sponsorship and other payments will be due in the next 12 months?",
+      "gt": "0.12993",
+      "pred": "0.1259",
+      "ok": false
+    },
+    {
+      "i": 296,
+      "q": "as of december 31 , 2008 , what percentage of unrecognized tax benefits would not impact the effective if recognized?",
+      "gt": "0.10101",
+      "pred": "0.88889",
+      "ok": false
+    },
+    {
+      "i": 297,
+      "q": "what was the percent of the anticipated increased in the berths capacity to service european cruise market between 2012 and 2016",
+      "gt": "0.18065",
+      "pred": "0.2",
+      "ok": false
+    },
+    {
+      "i": 298,
+      "q": "what percentage of total goodwill does oneok partners represent at december 31 , 2007?",
+      "gt": "0.71816",
+      "pred": "0.5869",
+      "ok": false
+    },
+    {
+      "i": 299,
+      "q": "what is the roi of s&p 500 from 2007 to 2012?",
+      "gt": "0.0859",
+      "pred": "-0.21",
+      "ok": false
+    }
+  ]
+}
