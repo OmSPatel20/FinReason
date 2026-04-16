@@ -1,7 +1,7 @@
 <p align="center">
   <h1 align="center">📊 FinReason</h1>
   <p align="center">
-    <strong>Teaching a Small Language Model Financial Numerical Reasoning<br>via Reinforcement Learning with Verifiable Rewards</strong>
+    <strong>How Small Can You Go? A Multi-Scale Study of GRPO<br>for Financial Numerical Reasoning</strong>
   </p>
   <p align="center">
     EGN 6217 — Applied Deep Learning · University of Florida · Spring 2026
@@ -12,94 +12,109 @@
 
 ## What Is This Project?
 
-FinReason takes a small, open-source language model (**Qwen2.5-1.5B-Instruct** — only 1.5 billion parameters) and teaches it to answer numerical questions about financial reports. Think questions like:
+FinReason systematically tests whether **GRPO (Group Relative Policy Optimization) with verifiable rewards** — the same reinforcement learning technique behind DeepSeek-R1 — can teach small language models to answer numerical questions about financial reports.
 
-> *"What was the year-over-year change in operating income from 2018 to 2019?"*
+The key question: **how small can the model be and still benefit from GRPO?**
 
-The model needs to read a financial table, find the right numbers, and do the math — subtraction, division, percentage change. This is something even GPT-4 gets wrong ~40% of the time on the FinQA benchmark.
+We test three scales — **1.5B, 3B, and 7B parameters** — using the same two-stage pipeline (SFT → GRPO), the same dataset (FinQA), and the same reward function. The scale where GRPO starts producing gains over SFT is the **minimum viable scale for RL-based financial reasoning**.
 
-**The key idea:** Instead of just showing the model correct answers (supervised fine-tuning), we also train it with **reinforcement learning** where it gets a simple reward: **right number = +1, wrong number = 0**. This is called **GRPO (Group Relative Policy Optimization) with Verifiable Rewards** — the same technique behind DeepSeek-R1, one of the most capable reasoning models in 2025.
+This fills a gap in the literature: concurrent work (Fin-R1, Fin-o1, DianJin-R1) only tested GRPO at 7B+ scale. Nobody has published results at 1.5B or 3B.
 
 ---
 
 ## Why Does This Matter?
 
-**The problem is real.** Financial analysts at banks, audit firms, and regulators spend hours manually extracting and computing figures from earnings reports. LLMs promise to automate this, but they hallucinate numbers, confuse table rows, and skip arithmetic steps.
+**The problem is real.** Financial analysts spend hours extracting and computing figures from earnings reports. LLMs promise to automate this, but they hallucinate numbers, confuse table rows, and skip arithmetic steps. Even frontier LLMs hit only ~60% accuracy on FinQA; human experts score ~91%.
 
-**The gap is measurable.** On the FinQA benchmark, even frontier LLMs hit only ~60% accuracy. Human financial experts score ~91%. That 30-point gap is the problem this project attacks.
+**The technique is cutting-edge.** GRPO with verifiable rewards is the #1 technique in LLM post-training (2025-2026). DeepSeek-R1, OpenAI's o-series, and other reasoning models all use it. Applying it to financial reasoning at multiple scales is novel.
 
-**The technique is cutting-edge.** GRPO with verifiable rewards is the #1 technique in LLM post-training right now (2025-2026). It's how DeepSeek-R1, OpenAI's o-series, and other reasoning models are built. Applying it to financial domain reasoning is novel — all published GRPO work targets math competitions and code, not real-world financial documents.
-
-**The constraint is practical.** The entire pipeline runs on a single consumer GPU with 8 GB VRAM. No datacenter needed. This proves the technique works under real hardware constraints, which matters for anyone thinking about on-device or cost-constrained deployment.
+**The constraint is practical.** Running GRPO on small models matters for on-device deployment, cost-constrained environments, and organizations that can't afford A100 clusters. Understanding the minimum viable scale informs real deployment decisions.
 
 ---
 
 ## How It Works
 
-### The Two-Stage Pipeline
+### The Two-Stage Pipeline (Applied at Each Scale)
 
 ```
 ┌─────────────────────────────────────────────────────────────────────┐
 │                                                                     │
-│  FinQA Dataset (8,281 QA pairs from S&P 500 earnings reports)       │
+│  FinQA Dataset (6,624 train + 1,657 test QA pairs)                  │
 │       │                                                             │
 │       ▼                                                             │
 │  ┌──────────────────────────────────┐                               │
 │  │  STAGE 1: Supervised Fine-Tuning │  ← Teaches the model to      │
-│  │  (SFT with QLoRA)               │    read financial tables and  │
-│  │  ~1-2 hours on GPU              │    produce short answers      │
+│  │  (SFT with QLoRA)               │    read financial tables,     │
+│  │  + Chain-of-thought warmup       │    produce <think> reasoning  │
 │  └──────────────┬───────────────────┘                               │
 │                 │                                                    │
 │                 ▼                                                    │
 │  ┌──────────────────────────────────┐     ┌───────────────────┐     │
 │  │  STAGE 2: GRPO Reinforcement    │◄────│  Reward Function  │     │
 │  │  Learning                        │────►│  correct = +1     │     │
-│  │  ~2-4 hours on GPU              │     │  wrong   =  0     │     │
+│  │  4 completions per question      │     │  wrong   =  0     │     │
 │  └──────────────┬───────────────────┘     │  <think> = +0.2   │     │
 │                 │                          └───────────────────┘     │
 │                 ▼                                                    │
-│  Three Model Checkpoints Compared:                                  │
-│    1. Zero-Shot (no training)     → ~0-5% accuracy                  │
-│    2. After SFT                   → ~20-30% accuracy                │
-│    3. After SFT + GRPO           → ~30-45% accuracy                 │
+│  Three Checkpoints Compared at Each Scale:                          │
+│    1. Zero-Shot (no training)                                       │
+│    2. After SFT                                                     │
+│    3. After SFT + GRPO                                              │
 │                                                                     │
-│  Streamlit Demo App (paste data or upload PDF, ask questions)       │
+│  Repeated for: 1.5B → 3B → 7B                                      │
+│  The scale where GRPO > SFT = minimum viable scale                  │
 └─────────────────────────────────────────────────────────────────────┘
 ```
 
-### What GRPO Does (in plain English)
+### What GRPO Does
 
-For each financial question, the model generates **4 different answers**. A simple rule-based function checks each one — did you get the right number? The answers that scored above the group average get reinforced (model learns to produce more of these). The ones below average get suppressed. No neural reward model, no human feedback — just "is the number correct?"
+For each financial question, the model generates **4 different answers**. A rule-based function checks each: did you get the right number? Answers above the group average get reinforced; answers below get suppressed. No neural reward model, no human feedback — just "is the number correct?"
 
-Over thousands of questions, the model discovers that **reasoning step-by-step before answering** leads to more correct answers. It starts producing `<think>` traces on its own — showing its work like a human analyst would.
+### The Reward Function
+
+```python
+def reward_function(model_output, ground_truth):
+    correct = check_answer(extract_final_answer(model_output), ground_truth)  # ±1% tolerance
+    has_think = bool(re.search(r'<think>.*?</think>', model_output))
+    return (1.0 if correct else 0.0) + (0.2 if has_think else 0.0)
+```
+
+40 lines of Python. No neural network. Handles 25+ currency formats ($, €, £, RM, ₹, ¥, etc.).
+
+---
+
+## Multi-Scale Results
+
+| Scale | Zero-Shot | SFT | GRPO | GRPO − SFT (Δ) | Think Rate |
+|---|---|---|---|---|---|
+| **1.5B** | 3.7% | 7.0% | 6.7% | −0.3% | 0% |
+| **3B** | TBD | TBD | TBD | TBD | TBD |
+| **7B** | TBD | TBD | TBD | TBD | TBD |
+
+**Key finding at 1.5B:** GRPO does not improve over SFT. The primary bottleneck is reward sparsity — with SFT accuracy at only 7%, GRPO rarely sees correct completions during sampling (mean reward 0.06), producing near-zero gradient signal.
+
+**Research question:** Does 3B provide enough capacity for GRPO to cross the threshold?
 
 ---
 
 ## Dataset
 
-### FinQA (Primary — Training & Evaluation)
+### FinQA (Primary)
 
 | Property | Details |
 |----------|---------|
 | **Source** | [wandb/finqa-data-processed](https://huggingface.co/datasets/wandb/finqa-data-processed) on HuggingFace |
 | **Origin** | Chen et al., EMNLP 2021. Created by financial experts at UPenn. |
 | **Size** | 6,624 training + 1,657 test QA pairs |
-| **Content** | Real S&P 500 earnings reports with tables, text, questions, and verified numerical answers |
+| **Content** | Real S&P 500 earnings reports with tables, text, questions, and verified answers |
 | **Columns** | `query`, `context`, `exe_ans`, `table`, `pre_text`, `post_text`, `program` |
-| **License** | Creative Commons 4.0 — fully public, no access restrictions |
-| **Download** | Automatic via `datasets` library. ~32 MB total. |
+| **License** | Creative Commons 4.0 |
 
-### TAT-QA (Secondary — Out-of-Distribution Testing)
+The `program` column contains computation steps (e.g., `subtract(1452.4, 1146.2)`) which we convert to `<think>` reasoning traces during SFT training.
 
-| Property | Details |
-|----------|---------|
-| **Source** | [next-tat/TAT-QA](https://huggingface.co/datasets/next-tat/TAT-QA) on HuggingFace |
-| **Size** | 16,552 questions over 2,757 financial report contexts |
-| **Purpose** | Tests whether GRPO-trained reasoning generalizes to unseen question types |
+### Cross-Currency Testing
 
-### Why These Datasets?
-
-Financial QA is ideal for GRPO because **every answer is a number that can be verified**. You don't need a neural reward model or human annotators to judge quality — a Python function can check if `306.2 == 306.2`. That's what makes the verifiable reward possible.
+We additionally test on the **J.P. Morgan Chase Bank Berhad Q4 2024** annual report (Malaysian Ringgit, MFRS standards) to evaluate cross-currency generalization.
 
 ---
 
@@ -107,17 +122,15 @@ Financial QA is ideal for GRPO because **every answer is a number that can be ve
 
 | Component | Library | Why |
 |-----------|---------|-----|
-| Base model | Qwen2.5-1.5B-Instruct | Largest model that fits in 8GB VRAM with 4-bit quantization |
-| Quantization | bitsandbytes (NF4 4-bit) | Compresses model from ~3GB to ~0.8GB in VRAM |
-| Fine-tuning | PEFT (QLoRA, rank 16) | Trains only ~1% of parameters — fast, memory-efficient |
-| SFT trainer | TRL SFTTrainer | HuggingFace's standard supervised fine-tuning |
-| GRPO trainer | TRL GRPOTrainer | HuggingFace's implementation of the GRPO algorithm |
-| Inference | HuggingFace Transformers | Model loading, tokenization, generation |
+| Base models | Qwen2.5 (1.5B / 3B / 7B) | Best open models at each scale |
+| Quantization | bitsandbytes (NF4 4-bit) | Fits larger models in limited VRAM |
+| Fine-tuning | PEFT (QLoRA, rank 16) | Trains ~1% of parameters |
+| SFT | TRL SFTTrainer | Standard supervised fine-tuning |
+| GRPO | TRL GRPOTrainer | DeepSeek-R1's RL algorithm |
+| Inference | HuggingFace Transformers | Model loading, generation |
 | Data | HuggingFace Datasets | One-line dataset download |
-| Memory optimization | Unsloth (optional) | Saves ~30% VRAM, faster training |
-| Web interface | Streamlit | Interactive demo with PDF upload |
-| PDF extraction | pdfplumber + pytesseract | Handles both digital and scanned PDFs |
-| Live monitoring | Custom LiveLogCallback | Real-time training dashboard |
+| Web interface | Streamlit | Interactive multi-scale demo |
+| PDF extraction | pdfplumber + pytesseract | Handles digital + scanned PDFs |
 | Plotting | matplotlib | Generates all report figures |
 
 ---
@@ -127,76 +140,67 @@ Financial QA is ideal for GRPO because **every answer is a number that can be ve
 ```
 FinReason/
 │
-├── README.md                           ← You are here
-├── TECHNICAL_REFERENCE.md              ← Deep dive: how every file and function works
-├── requirements.txt                    ← All Python dependencies
-├── .gitignore                          ← Keeps checkpoints and cache out of git
+├── README.md                                ← You are here
+├── TECHNICAL_REFERENCE.md                   ← How every file and function works
+├── requirements.txt
+├── .gitignore
 │
-├── src/                                ← All source code
-│   ├── shared_utils.py                 ← Core module: reward function, metrics, data extraction
-│   ├── training_logger.py              ← Live log callback for training dashboard
-│   ├── pdf_extractor.py                ← OCR + multi-currency PDF processing (25+ currencies)
+├── src/
+│   ├── shared_utils.py                      ← Reward function, metrics, extraction
+│   ├── training_logger.py                   ← Live log callback
+│   ├── pdf_extractor.py                     ← OCR + multi-currency (25+ currencies)
+│   ├── run_scale.py                         ← One-command full pipeline per scale
 │   │
-│   ├── step_00_check_gpu.py            ← Verify GPU, CUDA, all packages
-│   ├── step_01_explore_data.py         ← Download FinQA, analyze answer types
-│   ├── step_02_zeroshot_baseline.py    ← Checkpoint 1: base model (no training)
-│   ├── step_03_format_data.py          ← Format data into chat template for SFT
-│   ├── sft_train.py                    ← Stage 1: SFT with QLoRA (~1-2 hours)
-│   ├── step_05_eval_sft.py             ← Checkpoint 2: SFT model evaluation
-│   ├── grpo_train.py                   ← Stage 2: GRPO with verifiable rewards (~2-4 hours)
-│   ├── step_07_eval_grpo.py            ← Checkpoint 3: GRPO model evaluation (final)
-│   └── analysis.py                     ← Generate all 4 report figures
+│   ├── step_00_check_gpu.py                 ← Verify GPU + packages
+│   ├── step_01_explore_data.py              ← Download + explore FinQA
+│   ├── step_02_zeroshot_baseline.py         ← Checkpoint 1
+│   ├── step_03_format_data.py               ← Format data with <think> tags
+│   ├── sft_train.py                         ← Stage 1: SFT
+│   ├── step_05_eval_sft.py                  ← Checkpoint 2
+│   ├── grpo_train.py                        ← Stage 2: GRPO
+│   ├── step_07_eval_grpo.py                 ← Checkpoint 3
+│   └── analysis.py                          ← Figure generation
 │
-├── ui/                                 ← User interfaces
-│   ├── app.py                          ← Streamlit demo (interactive Q&A + PDF upload)
-│   └── training_monitor.py             ← Live training dashboard (loss, reward, VRAM)
+├── ui/
+│   ├── app.py                               ← Streamlit demo (multi-scale + comparison)
+│   └── training_monitor.py                  ← Live training dashboard
 │
-├── notebooks/                          ← Jupyter notebooks
-│   ├── setup.ipynb                     ← Environment check + data exploration (required for submission)
-│   └── colab_run.ipynb                 ← Full pipeline notebook for Google Colab
+├── notebooks/
+│   ├── setup.ipynb                          ← Environment + data exploration
+│   └── colab_run.ipynb                      ← Full Colab pipeline
 │
-├── docs/                               ← Reports and documentation
-│   ├── technical_blueprint.pdf         ← Deliverable 1.2 blueprint
-│   └── deliverable2_report.pdf         ← Deliverable 2 implementation report
+├── docs/
+│   ├── technical_blueprint.pdf              ← Deliverable 1.2
+│   └── deliverable2_report.pdf              ← Deliverable 2
 │
-├── data/                               ← Auto-populated by scripts
-│   ├── train_sft.json                  ← Formatted training data (created by step_03)
-│   ├── val_sft.json                    ← Formatted validation data (created by step_03)
-│   └── format_info.json                ← Dataset metadata (created by step_01)
+├── outputs/                                 ← Results JSONs (per scale)
+│   ├── 1.5B/
+│   │   ├── zeroshot_results.json
+│   │   ├── sft_results.json
+│   │   └── grpo_results.json
+│   ├── 3B/
+│   │   └── ...
+│   └── 7B/
+│       └── ...
 │
-├── results/                            ← Figures and visualizations
-│   ├── fig1_accuracy.png               ← 3-checkpoint accuracy comparison
-│   ├── fig2_grpo_curves.png            ← GRPO loss and reward during training
-│   ├── fig3_error_analysis.png         ← SFT vs GRPO per-example comparison
-│   ├── fig4_think_analysis.png         ← Does reasoning help? With vs without <think>
-│   └── data_exploration.png            ← Answer type and context length distributions
+├── results/                                 ← Figures (per scale)
+│   ├── 1.5B/fig1_accuracy.png, fig2_grpo_curves.png
+│   ├── 3B/...
+│   └── 7B/...
 │
-├── outputs/                            ← JSON results from evaluation
-│   ├── zeroshot_results.json           ← Checkpoint 1 detailed results
-│   ├── sft_results.json                ← Checkpoint 2 detailed results
-│   ├── grpo_results.json               ← Checkpoint 3 detailed results
-│   └── grpo_training_log.json          ← Training metrics over time
+├── checkpoints/                             ← Model adapters (per scale, not in git)
+│   ├── 1.5B/sft/final_adapter, grpo/final_adapter
+│   ├── 3B/sft/final_adapter, grpo/final_adapter
+│   └── 7B/sft/final_adapter, grpo/final_adapter
 │
-└── checkpoints/                        ← Model weights (not in git — too large)
-    ├── sft/final_adapter/              ← SFT LoRA adapter (~10-30 MB)
-    └── grpo/final_adapter/             ← GRPO LoRA adapter (~10-30 MB)
+└── data/                                    ← Auto-populated by scripts
+    ├── train_sft.json
+    └── val_sft.json
 ```
 
 ---
 
-## Installation & Setup
-
-### Prerequisites
-
-- **Python 3.11**
-- **NVIDIA GPU** with CUDA support
-- **conda** (Anaconda or Miniconda)
-- **Tesseract OCR** (only needed for PDF extraction feature)
-  - Windows: Download from [github.com/UB-Mannheim/tesseract/wiki](https://github.com/UB-Mannheim/tesseract/wiki)
-  - Linux: `sudo apt install tesseract-ocr poppler-utils`
-  - Mac: `brew install tesseract poppler`
-
-### Install
+## Installation
 
 ```bash
 git clone https://github.com/OmSPatel20/FinReason.git
@@ -204,125 +208,117 @@ cd FinReason
 conda create -n finreason python=3.11 -y
 conda activate finreason
 pip install -r requirements.txt
-pip install unsloth    # optional but recommended — saves ~30% VRAM
 ```
 
 ---
 
 ## How to Run
 
-### Local Machine (step by step)
+### Option 1: One Command Per Scale (recommended)
 
 ```bash
-conda activate finreason
+python src/run_scale.py 1.5B    # ~5 hours on A100
+python src/run_scale.py 3B      # ~5 hours on A100
+python src/run_scale.py 7B      # ~8 hours on A100
+```
 
-python src/step_00_check_gpu.py            # Verify GPU          (~10 sec)
-python src/shared_utils.py                 # Test reward function (~5 sec, must show all ✓)
-python src/step_01_explore_data.py         # Download FinQA      (~2 min)
-python src/step_02_zeroshot_baseline.py    # Checkpoint 1        (~20 min)
-python src/step_03_format_data.py          # Format data         (~1 min)
-python src/sft_train.py                    # Stage 1: SFT        (~1-2 hrs)
-python src/step_05_eval_sft.py             # Checkpoint 2        (~20 min)
-python src/grpo_train.py                   # Stage 2: GRPO       (~2-4 hrs)
-python src/step_07_eval_grpo.py            # Checkpoint 3        (~20 min)
-python src/analysis.py                     # Generate figures     (~1 min)
+Each command runs the **entire pipeline** for that scale: zero-shot → SFT → GRPO → eval → figures. Results saved in `outputs/<scale>/` and `checkpoints/<scale>/`.
+
+### Option 2: Step by Step
+
+```bash
+python src/step_00_check_gpu.py
+python src/shared_utils.py
+python src/step_01_explore_data.py
+python src/step_02_zeroshot_baseline.py
+python src/step_03_format_data.py
+python src/sft_train.py
+python src/step_05_eval_sft.py
+python src/grpo_train.py
+python src/step_07_eval_grpo.py
+python src/analysis.py
 ```
 
 ### Google Colab
 
-1. Go to [colab.research.google.com](https://colab.research.google.com)
-2. Runtime → Change runtime type → **T4 GPU**
-3. Upload `notebooks/colab_run.ipynb` or run these cells:
-
 ```python
-!pip install -q torch torchvision torchaudio
-!pip install -q transformers trl peft bitsandbytes accelerate datasets mergekit
-!pip install -q matplotlib seaborn pandas numpy tqdm unsloth
+# Cell 1: Install
+!pip uninstall -y -q torch torchvision torchaudio
+!pip install torch==2.4.0 torchvision==0.19.0 torchaudio==2.4.0 --index-url https://download.pytorch.org/whl/cu121
+!pip install transformers==4.48.0 trl==0.15.2 peft accelerate bitsandbytes datasets matplotlib pandas numpy tqdm seaborn
+!pip uninstall -y wandb
 
+# Cell 2: Clone
 !git clone https://github.com/OmSPatel20/FinReason.git
 %cd FinReason
 
-!python src/step_00_check_gpu.py
-!python src/shared_utils.py
-!python src/step_01_explore_data.py
-!python src/step_02_zeroshot_baseline.py
-!python src/step_03_format_data.py
-!python src/sft_train.py
-!python src/step_05_eval_sft.py
-!python src/grpo_train.py
-!python src/step_07_eval_grpo.py
-!python src/analysis.py
+# Cell 3: Run each scale
+!python src/run_scale.py 1.5B
+!python src/run_scale.py 3B
+!python src/run_scale.py 7B
+
+# Cell 4: Save to Drive
+from google.colab import drive
+drive.mount('/content/drive')
+!cp -r outputs /content/drive/MyDrive/FinReason_Results/
+!cp -r results /content/drive/MyDrive/FinReason_Results/
+!cp -r checkpoints /content/drive/MyDrive/FinReason_Results/
 ```
 
 ### Launch the Demo
 
 ```bash
-streamlit run ui/app.py                    # Interactive Q&A demo
-streamlit run ui/training_monitor.py       # Live training dashboard (during training)
+streamlit run ui/app.py
 ```
 
-### Run the Setup Notebook (required for course submission)
-
-```bash
-jupyter notebook notebooks/setup.ipynb     # Run all cells, save with outputs
-```
+Features:
+- **Model Scale selector** — switch between 1.5B, 3B, 7B
+- **Training Stage selector** — switch between Zero-Shot, SFT, GRPO
+- **PDF upload** — test on any financial report in any currency
+- **Reasoning display** — shows `<think>` traces when the model uses them
+- **Cross-Scale Comparison** — table and chart showing all scales side by side
 
 ---
 
-## Hardware Requirements
+## Hardware
 
-### Minimum (what this project was built for)
+### What We Used
 
-| Component | Spec |
-|-----------|------|
-| GPU | NVIDIA RTX 4060 Laptop (8 GB VRAM) |
-| CPU | Intel i7-14th Gen HX |
-| RAM | 16 GB |
-| Storage | ~10 GB free (model cache + data + checkpoints) |
-| OS | Windows 11 / Linux / macOS (with NVIDIA GPU) |
+| Hardware | Role | Time |
+|----------|------|------|
+| HP Omen RTX 4060 (8GB) | Development, testing, Streamlit demo | — |
+| Google Colab Pro A100 (80GB) | Training all three scales | ~18 hrs total |
 
-### Recommended (faster training)
+### Per-Scale Training Time (A100)
 
-| Component | Spec |
-|-----------|------|
-| GPU | Google Colab T4 (16 GB) or A100 (40 GB) |
-| Training time | T4: ~3-4 hrs total · A100: ~1-2 hrs total |
+| Scale | SFT | GRPO | Total |
+|---|---|---|---|
+| 1.5B | ~1.5 hrs | ~2-3 hrs | ~4 hrs |
+| 3B | ~2-3 hrs | ~3-4 hrs | ~6 hrs |
+| 7B | ~3-4 hrs | ~4-5 hrs | ~8 hrs |
 
 ### If Hardware Were No Constraint
 
-With an A100 (80 GB) or H100 cluster, the project could be scaled to:
-- **Qwen2.5-7B or 14B** as the base model (much stronger reasoning baseline)
-- **Group size G=16 or 32** for better GRPO signal
-- **Full FinQA + TAT-QA + ConvFinQA** combined training (~30K examples)
-- **Multi-turn financial dialogue** (conversational QA over reports)
-- **Full fine-tuning** instead of QLoRA (higher quality but 10x more VRAM)
-- **Longer context (4096+ tokens)** to handle complete financial filings without truncation
-- **DPO/RLHF** on top of GRPO for better output formatting and safety alignment
+With an H100 cluster, the study could be extended to:
+- **14B and 32B** scales (complete the scaling curve)
+- **Group size G=16 or 32** for stronger GRPO signal
+- **Full fine-tuning** instead of QLoRA
 - **Multi-lingual training** on IFRS filings from Europe, Asia, and emerging markets
-
----
-
-## Key Results (Expected)
-
-| Checkpoint | Execution Accuracy | Think Rate | Description |
-|------------|-------------------|------------|-------------|
-| Zero-Shot | 0-5% | 0% | Base model with no training |
-| SFT | 18-30% | 0-5% | After supervised fine-tuning |
-| **SFT + GRPO** | **25-40%** | **20-50%** | After reinforcement learning |
-
-The main finding: GRPO with verifiable rewards measurably improves financial numerical reasoning beyond what SFT alone achieves, and the model develops emergent step-by-step reasoning (the `<think>` traces) without being explicitly forced to.
+- **Longer context (8K+ tokens)** to handle complete financial filings without truncation
 
 ---
 
 ## References
 
-1. Z. Chen et al., "FinQA: A Dataset of Numerical Reasoning over Financial Data," *Proc. EMNLP*, 2021.
-2. DeepSeek-AI, "DeepSeek-R1: Incentivizing Reasoning Capability in LLMs via Reinforcement Learning," *arXiv:2501.12948*, 2025. Published in *Nature*, 2025.
+1. Z. Chen et al., "FinQA: A Dataset of Numerical Reasoning over Financial Data," *EMNLP*, 2021.
+2. DeepSeek-AI, "DeepSeek-R1: Incentivizing Reasoning Capability in LLMs via Reinforcement Learning," *arXiv:2501.12948*, 2025.
 3. Z. Shao et al., "DeepSeekMath: Pushing the Limits of Mathematical Reasoning in Open Language Models," *arXiv:2402.03300*, 2024.
-4. T. Dettmers et al., "QLoRA: Efficient Finetuning of Quantized Language Models," *Proc. NeurIPS*, 2023.
-5. L. von Werra et al., "TRL: Transformer Reinforcement Learning," GitHub, 2022.
-6. F. Zhu et al., "TAT-QA: A Question Answering Benchmark on a Hybrid of Tabular and Textual Content in Finance," *Proc. ACL*, 2021.
-7. J. Wei et al., "Chain-of-Thought Prompting Elicits Reasoning in Large Language Models," *Proc. NeurIPS*, 2022.
+4. T. Dettmers et al., "QLoRA: Efficient Finetuning of Quantized Language Models," *NeurIPS*, 2023.
+5. Z. Liu et al., "Fin-R1: A Large Language Model for Financial Reasoning through RL," *arXiv:2503.16252*, 2025.
+6. L. Qian et al., "Fin-o1: On the Transferability of Reasoning-Enhanced LLMs to Finance," *arXiv:2502.08127*, 2025.
+7. F. Zhu et al., "TAT-QA: A Question Answering Benchmark on Hybrid Tabular and Textual Content in Finance," *ACL*, 2021.
+8. J. Wei et al., "Chain-of-Thought Prompting Elicits Reasoning in Large Language Models," *NeurIPS*, 2022.
+9. L. von Werra et al., "TRL: Transformer Reinforcement Learning," GitHub, 2022.
 
 ---
 
@@ -336,4 +332,4 @@ GitHub: [OmSPatel20](https://github.com/OmSPatel20)
 
 ## License
 
-This project is for academic purposes (EGN 6217 coursework). The FinQA dataset is licensed under Creative Commons Attribution 4.0. Model weights are subject to Qwen's license terms.
+Academic use (EGN 6217 coursework). FinQA dataset: CC-BY 4.0. Model weights: Qwen license terms.
