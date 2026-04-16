@@ -16,9 +16,8 @@ FinReason systematically tests whether **GRPO (Group Relative Policy Optimizatio
 
 The key question: **how small can the model be and still benefit from GRPO?**
 
-We test three scales — **1.5B, 3B, and 7B parameters** — using the same two-stage pipeline (SFT → GRPO), the same dataset (FinQA), and the same reward function. The scale where GRPO starts producing gains over SFT is the **minimum viable scale for RL-based financial reasoning**.
+I test three scales — **1.5B, 3B, and 7B parameters** — using the same two-stage pipeline (SFT → GRPO), the same dataset (FinQA), and the same reward function. The scale where GRPO starts producing gains over SFT is the **minimum viable scale for RL-based financial reasoning**.
 
-This fills a gap in the literature: concurrent work (Fin-R1, Fin-o1, DianJin-R1) only tested GRPO at 7B+ scale. Nobody has published results at 1.5B or 3B.
 
 ---
 
