@@ -19,12 +19,10 @@ MODEL_NAME = "Qwen/Qwen2.5-1.5B-Instruct"
 
 @st.cache_resource
 def load_model(base, adapter):
-    from transformers import AutoTokenizer, AutoModelForCausalLM, BitsAndBytesConfig
+    from transformers import AutoTokenizer, AutoModelForCausalLM
     tok = AutoTokenizer.from_pretrained(base)
     mdl = AutoModelForCausalLM.from_pretrained(base,
-        quantization_config=BitsAndBytesConfig(load_in_4bit=True, bnb_4bit_quant_type="nf4",
-            bnb_4bit_compute_dtype=torch.float16, bnb_4bit_use_double_quant=True),
-        device_map="auto")
+        torch_dtype=torch.float32)
     if adapter and os.path.exists(adapter):
         from peft import PeftModel
         mdl = PeftModel.from_pretrained(mdl, adapter)
@@ -77,7 +75,7 @@ with col2:
         else:
             with st.spinner(f"Running {model_choice}..."):
                 model, tokenizer = load_model(MODEL_NAME, adapter_map[model_choice])
-                prompt = format_prompt(context, question)
+                prompt = format_prompt(context, question, mode="grpo_eval")
                 ids = tokenizer(prompt, return_tensors="pt", truncation=True, max_length=1024).to(model.device)
                 with torch.no_grad():
                     out = model.generate(**ids, max_new_tokens=256, do_sample=False, pad_token_id=tokenizer.eos_token_id)
@@ -90,7 +88,8 @@ with col2:
                 ok = check_answer(final, ground_truth)
                 r = reward_function(raw, ground_truth)
                 (st.success if ok else st.error)(f"{'✓ Correct' if ok else '✗ Wrong'} (R={r:.1f})")
-            with st.expander("Raw output"): st.code(raw)
+            st.subheader("Full Model Output")
+            st.code(raw, language=None)
 
 # Results dashboard
 st.markdown("---")
