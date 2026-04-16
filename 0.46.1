@@ -1,0 +1,58 @@
+Collecting transformers==4.48.0
+  Downloading transformers-4.48.0-py3-none-any.whl.metadata (44 kB)
+Collecting peft==0.13.2
+  Downloading peft-0.13.2-py3-none-any.whl.metadata (13 kB)
+Requirement already satisfied: bitsandbytes in C:\Users\ospatel17\anaconda3\envs\finreason\Lib\site-packages (0.49.2)
+Requirement already satisfied: filelock in C:\Users\ospatel17\anaconda3\envs\finreason\Lib\site-packages (from transformers==4.48.0) (3.25.2)
+Collecting huggingface-hub<1.0,>=0.24.0 (from transformers==4.48.0)
+  Downloading huggingface_hub-0.36.2-py3-none-any.whl.metadata (15 kB)
+Requirement already satisfied: numpy>=1.17 in C:\Users\ospatel17\anaconda3\envs\finreason\Lib\site-packages (from transformers==4.48.0) (2.4.4)
+Requirement already satisfied: packaging>=20.0 in C:\Users\ospatel17\anaconda3\envs\finreason\Lib\site-packages (from transformers==4.48.0) (26.0)
+Requirement already satisfied: pyyaml>=5.1 in C:\Users\ospatel17\anaconda3\envs\finreason\Lib\site-packages (from transformers==4.48.0) (6.0.3)
+Requirement already satisfied: regex!=2019.12.17 in C:\Users\ospatel17\anaconda3\envs\finreason\Lib\site-packages (from transformers==4.48.0) (2026.4.4)
+Requirement already satisfied: requests in C:\Users\ospatel17\anaconda3\envs\finreason\Lib\site-packages (from transformers==4.48.0) (2.33.1)
+Collecting tokenizers<0.22,>=0.21 (from transformers==4.48.0)
+  Downloading tokenizers-0.21.4-cp39-abi3-win_amd64.whl.metadata (6.9 kB)
+Requirement already satisfied: safetensors>=0.4.1 in C:\Users\ospatel17\anaconda3\envs\finreason\Lib\site-packages (from transformers==4.48.0) (0.7.0)
+Requirement already satisfied: tqdm>=4.27 in C:\Users\ospatel17\anaconda3\envs\finreason\Lib\site-packages (from transformers==4.48.0) (4.67.3)
+Requirement already satisfied: psutil in C:\Users\ospatel17\anaconda3\envs\finreason\Lib\site-packages (from peft==0.13.2) (7.2.2)
+Requirement already satisfied: torch>=1.13.0 in C:\Users\ospatel17\anaconda3\envs\finreason\Lib\site-packages (from peft==0.13.2) (2.10.0)
+Requirement already satisfied: accelerate>=0.21.0 in C:\Users\ospatel17\anaconda3\envs\finreason\Lib\site-packages (from peft==0.13.2) (1.13.0)
+Requirement already satisfied: fsspec>=2023.5.0 in C:\Users\ospatel17\anaconda3\envs\finreason\Lib\site-packages (from huggingface-hub<1.0,>=0.24.0->transformers==4.48.0) (2025.9.0)
+Requirement already satisfied: typing-extensions>=3.7.4.3 in C:\Users\ospatel17\anaconda3\envs\finreason\Lib\site-packages (from huggingface-hub<1.0,>=0.24.0->transformers==4.48.0) (4.15.0)
+Requirement already satisfied: sympy>=1.13.3 in C:\Users\ospatel17\anaconda3\envs\finreason\Lib\site-packages (from torch>=1.13.0->peft==0.13.2) (1.14.0)
+Requirement already satisfied: networkx>=2.5.1 in C:\Users\ospatel17\anaconda3\envs\finreason\Lib\site-packages (from torch>=1.13.0->peft==0.13.2) (3.6.1)
+Requirement already satisfied: jinja2 in C:\Users\ospatel17\anaconda3\envs\finreason\Lib\site-packages (from torch>=1.13.0->peft==0.13.2) (3.1.6)
+Requirement already satisfied: mpmath<1.4,>=1.1.0 in C:\Users\ospatel17\anaconda3\envs\finreason\Lib\site-packages (from sympy>=1.13.3->torch>=1.13.0->peft==0.13.2) (1.3.0)
+Requirement already satisfied: colorama in C:\Users\ospatel17\anaconda3\envs\finreason\Lib\site-packages (from tqdm>=4.27->transformers==4.48.0) (0.4.6)
+Requirement already satisfied: MarkupSafe>=2.0 in C:\Users\ospatel17\anaconda3\envs\finreason\Lib\site-packages (from jinja2->torch>=1.13.0->peft==0.13.2) (3.0.3)
+Requirement already satisfied: charset_normalizer<4,>=2 in C:\Users\ospatel17\anaconda3\envs\finreason\Lib\site-packages (from requests->transformers==4.48.0) (3.4.7)
+Requirement already satisfied: idna<4,>=2.5 in C:\Users\ospatel17\anaconda3\envs\finreason\Lib\site-packages (from requests->transformers==4.48.0) (3.11)
+Requirement already satisfied: urllib3<3,>=1.26 in C:\Users\ospatel17\anaconda3\envs\finreason\Lib\site-packages (from requests->transformers==4.48.0) (2.6.3)
+Requirement already satisfied: certifi>=2023.5.7 in C:\Users\ospatel17\anaconda3\envs\finreason\Lib\site-packages (from requests->transformers==4.48.0) (2026.2.25)
+Downloading transformers-4.48.0-py3-none-any.whl (9.7 MB)
+   ---------------------------------------- 9.7/9.7 MB 7.4 MB/s  0:00:01
+Downloading peft-0.13.2-py3-none-any.whl (320 kB)
+Downloading huggingface_hub-0.36.2-py3-none-any.whl (566 kB)
+   ---------------------------------------- 566.4/566.4 kB 20.3 MB/s  0:00:00
+Downloading tokenizers-0.21.4-cp39-abi3-win_amd64.whl (2.5 MB)
+   ---------------------------------------- 2.5/2.5 MB 8.0 MB/s  0:00:00
+Installing collected packages: huggingface-hub, tokenizers, transformers, peft
+  Attempting uninstall: huggingface-hub
+    Found existing installation: huggingface_hub 1.10.1
+    Uninstalling huggingface_hub-1.10.1:
+      Successfully uninstalled huggingface_hub-1.10.1
+  Attempting uninstall: tokenizers
+    Found existing installation: tokenizers 0.22.2
+    Uninstalling tokenizers-0.22.2:
+      Successfully uninstalled tokenizers-0.22.2
+  Attempting uninstall: transformers
+    Found existing installation: transformers 5.5.0
+    Uninstalling transformers-5.5.0:
+      Successfully uninstalled transformers-5.5.0
+  Attempting uninstall: peft
+    Found existing installation: peft 0.18.1
+    Uninstalling peft-0.18.1:
+      Successfully uninstalled peft-0.18.1
+
+Successfully installed huggingface-hub-0.36.2 peft-0.13.2 tokenizers-0.21.4 transformers-4.48.0
